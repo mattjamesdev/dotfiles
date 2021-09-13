@@ -11,6 +11,7 @@ tmux/.tmux/plugins/**
 
 # Vim
 .netrwhist
+vim/.vim/autoload/**
 vim/.vim/plugged/**
 vim/.vim/pack/**
 
