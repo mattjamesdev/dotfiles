@@ -25,13 +25,11 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-# Path to config files
-export ZEXTRA="${HOME}/.config/zsh"
-
 # Path to plugins
 export ZPLUGINS="${HOME}/.config/zsh/plugins"
 
 
+# === PYENV ===========================
 # Initialise Pyenv:
 if [[ -d "$HOME/.pyenv" ]]; then
     eval "$(pyenv init -)"
@@ -88,7 +86,7 @@ export PROMPT='%F{046}%n@%m %*%f in %F{135}%~%f ${vcs_info_msg_0_}
 
 # === THEME ===========================
 # Warning: Overrides custom prompt configurations set in this file.
-source $ZPLUGINS/themes/powerlevel10k/powerlevel10k.zsh-theme
+#source $ZPLUGINS/themes/powerlevel10k/powerlevel10k.zsh-theme
 
 
 # === POWERLEVEL10k ===================
@@ -113,12 +111,13 @@ unset __conda_setup
 
 
 # === FUNCTIONS =======================
-source $ZEXTRA/.zfunctions
+source ${HOME}/.config/zsh/.zfunctions
 
 # === ALIASES =========================
-source $ZEXTRA/.zaliasrc
+source ${HOME}/.config/zsh/.zaliasrc
 
 
 # === SYNTAX HIGHLIGHTING =============
 # Must appear last in .zshrc:
 source $ZPLUGINS/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
