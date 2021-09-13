@@ -1,11 +1,9 @@
 # -----------------------------------------------------------------------------
 # General
-alias firefox="/Applications/Firefox.app/Contents/MacOS/firefox &>/dev/null &"
 alias ls="exa -agh --group-directories-first"
 alias path="echo -e ${PATH//\:/\\\n}"
 alias reload="clear; exec ${SHELL} -l"
 alias ta="tmux attach"
-alias telnet="gtelnet"
 
 # -----------------------------------------------------------------------------
 # Git
@@ -19,6 +17,11 @@ alias pip="pip3"
 alias python="python3"
 
 # -----------------------------------------------------------------------------
-# R/Rstudio
-# Relevant link: https://stackoverflow.com/questions/58923166/installing-r-studio-with-anaconda
-alias rstudio="/Applications/RStudio.app/Contents/MacOS/RStudio &"
+# macOS exclusive
+if `uname` == "Darwin"; then
+    alias firefox="/Applications/Firefox.app/Contents/MacOS/firefox &>/dev/null &"
+    alias telnet="gtelnet"
+    # R/Rstudio
+    # https://stackoverflow.com/questions/58923166/installing-r-studio-with-anaconda
+    alias rstudio="/Applications/RStudio.app/Contents/MacOS/RStudio &"
+fi
