@@ -21,26 +21,27 @@ function git() {
     fi
 }
 
-
+# macOS only
 # Add a "port export" command 
-function port() {
-    if [ "$1" = 'export' ]; then
-        shift
-        local PORT_PATH="$HOME/.macports"
-        if [ $# -eq 0 ]; then
-            command port -q installed | awk '{print $1}' > $PORT_PATH/portlist.txt
-            echo "List of installed ports saved to $PORT_PATH/portlist.txt"
-        else
-            if [[ -d $1 ]]; then
-                command port -q installed | awk '{print $1}' > $1/portlist.txt
-                echo "List of installed ports saved to $1/portlist.txt"
+if `uname` == "Darwin"; then
+    function port() {
+        if [ "$1" = 'export' ]; then
+            shift
+            local PORT_PATH="$HOME/.macports"
+            if [ $# -eq 0 ]; then
+                command port -q installed | awk '{print $1}' > $PORT_PATH/portlist.txt
+                echo "List of installed ports saved to $PORT_PATH/portlist.txt"
             else
-                echo "Error: directory \"$1\" does not exist."
-                return 1
+                if [[ -d $1 ]]; then
+                    command port -q installed | awk '{print $1}' > $1/portlist.txt
+                    echo "List of installed ports saved to $1/portlist.txt"
+                else
+                    echo "Error: directory \"$1\" does not exist."
+                    return 1
+                fi
             fi
+        else
+            command port "$@"
         fi
-    else
-        command port "$@"
-    fi
-}
-
+    }
+fi
