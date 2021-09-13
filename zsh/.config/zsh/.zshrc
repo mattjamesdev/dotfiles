@@ -6,22 +6,24 @@
 #      /____|___/_| |_|_|  \___|
 # =====================================
 
-# Plugin manager
+# === PLUGINS =========================
+# Download the plugin manager if not already installed
 if [[ ! -f ${HOME}/.config/zcomet/bin/zcomet.zsh ]]; then
   command git clone https://github.com/agkozak/zcomet.git ${HOME}/.config/zcomet/bin
 fi
-
+# Initialise the plugin manager
 source ~/.config/zcomet/bin/zcomet.zsh
 
+# Load plugins
 zcomet load romkatv/powerlevel10k
 zcomet load zsh-users/zsh-syntax-highlighting
 
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.config/zsh/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
-#if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-#  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-#fi
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
 
 # Path to config files
 export ZEXTRA="${HOME}/.config/zsh"
@@ -60,6 +62,7 @@ zmodload zsh/complist
 compinit
 _comp_options+=(globdots) # Include hidden (".*") files.
 
+# Compile the autocomplete file in zcomet (speeds up autocomplete)
 zcomet compile "${HOME}/.config/zsh/.zcompinit"
 
 
@@ -86,11 +89,6 @@ export PROMPT='%F{046}%n@%m %*%f in %F{135}%~%f ${vcs_info_msg_0_}
 # === THEME ===========================
 # Warning: Overrides custom prompt configurations set in this file.
 source $ZPLUGINS/themes/powerlevel10k/powerlevel10k.zsh-theme
-
-
-# === SYNTAX HIGHLIGHTING =============
-# Must appear last in .zshrc:
-source $ZPLUGINS/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 
 # === POWERLEVEL10k ===================
@@ -120,3 +118,7 @@ source $ZEXTRA/.zfunctions
 # === ALIASES =========================
 source $ZEXTRA/.zaliasrc
 
+
+# === SYNTAX HIGHLIGHTING =============
+# Must appear last in .zshrc:
+source $ZPLUGINS/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
