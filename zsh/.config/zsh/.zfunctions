@@ -1,0 +1,46 @@
+#!/bin/zsh
+
+# Clear records of all browser downloads
+# https://www.macgasm.net/news/tips/good-morning-your-mac-keeps-a-log-of-all-your-downloads/
+function cleardl() {
+    sqlite3 ~/Library/Preferences/com.apple.LaunchServices.QuarantineEventsV* 'delete from LSQuarantineEvent'
+}
+
+# Add a "git root" command (https://www.youtube.com/watch?v=C5aRtq-Rtbg)
+function git() {
+    if [ "$1" = root ]; then
+        shift
+        local ROOT="$(command git rev-parse --show-toplevel || echo -n .)"
+        if [ $# -eq 0 ]; then
+            cd "$ROOT"
+        else
+            (cd "$ROOT" && eval "$@")
+        fi
+    else
+        command git "$@"
+    fi
+}
+
+
+# Add a "port export" command 
+function port() {
+    if [ "$1" = 'export' ]; then
+        shift
+        local PORT_PATH="$HOME/.macports"
+        if [ $# -eq 0 ]; then
+            command port -q installed | awk '{print $1}' > $PORT_PATH/portlist.txt
+            echo "List of installed ports saved to $PORT_PATH/portlist.txt"
+        else
+            if [[ -d $1 ]]; then
+                command port -q installed | awk '{print $1}' > $1/portlist.txt
+                echo "List of installed ports saved to $1/portlist.txt"
+            else
+                echo "Error: directory \"$1\" does not exist."
+                return 1
+            fi
+        fi
+    else
+        command port "$@"
+    fi
+}
+

@@ -1,0 +1,15 @@
+**/*.DS_Store
+
+nvim/.config/nvim/autoload/plugged/**
+nvim/.config/nvim/autoload/plug.vim
+
+tmux/.tmux/plugins/**
+
+.netrwhist
+vim/.vim/plugged/**
+vim/.vim/pack/**
+
+.zsh_history
+.zcompdump
+zsh/.config/zsh/plugins/**
+zsh/.config/zsh/.zsh_sessions

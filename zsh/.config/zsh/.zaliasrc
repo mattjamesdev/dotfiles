@@ -1,0 +1,24 @@
+# -----------------------------------------------------------------------------
+# General
+alias firefox="/Applications/Firefox.app/Contents/MacOS/firefox &>/dev/null &"
+alias ls="exa -agh --group-directories-first"
+alias path="echo -e ${PATH//\:/\\\n}"
+alias reload="clear; exec ${SHELL} -l"
+alias ta="tmux attach"
+alias telnet="gtelnet"
+
+# -----------------------------------------------------------------------------
+# Git
+alias gs="git status"
+alias gl="git log --pretty=oneline --abbrev-commit"
+
+# -----------------------------------------------------------------------------
+# Python
+alias jlab="jupyter-lab"
+alias pip="pip3"
+alias python="python3"
+
+# -----------------------------------------------------------------------------
+# R/Rstudio
+# Relevant link: https://stackoverflow.com/questions/58923166/installing-r-studio-with-anaconda
+alias rstudio="/Applications/RStudio.app/Contents/MacOS/RStudio &"
