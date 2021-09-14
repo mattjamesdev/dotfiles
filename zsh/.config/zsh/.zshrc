@@ -25,9 +25,6 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-# Path to plugins
-export ZPLUGINS="${HOME}/.config/zsh/plugins"
-
 
 # === PYENV ===========================
 # Initialise Pyenv:
@@ -84,11 +81,6 @@ export PROMPT='%F{046}%n@%m %*%f in %F{135}%~%f ${vcs_info_msg_0_}
   $ '
 
 
-# === THEME ===========================
-# Warning: Overrides custom prompt configurations set in this file.
-#source $ZPLUGINS/themes/powerlevel10k/powerlevel10k.zsh-theme
-
-
 # === POWERLEVEL10k ===================
 # To customize prompt, run `p10k configure` or edit ~/.config/zsh/.p10k.zsh.
 [[ ! -f ~/.config/zsh/.p10k.zsh ]] || source ~/.config/zsh/.p10k.zsh
@@ -96,17 +88,33 @@ export PROMPT='%F{046}%n@%m %*%f in %F{135}%~%f ${vcs_info_msg_0_}
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/Users/matthewjames/opt/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "/Users/matthewjames/opt/anaconda3/etc/profile.d/conda.sh" ]; then
-        . "/Users/matthewjames/opt/anaconda3/etc/profile.d/conda.sh"
+if [[ `uname` == "Darwin" ]]; then
+    # macOS
+    __conda_setup="$('/Users/matthewjames/opt/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+    if [ $? -eq 0 ]; then
+        eval "$__conda_setup"
     else
-        export PATH="/Users/matthewjames/opt/anaconda3/bin:$PATH"
+        if [ -f "/Users/matthewjames/opt/anaconda3/etc/profile.d/conda.sh" ]; then
+            . "/Users/matthewjames/opt/anaconda3/etc/profile.d/conda.sh"
+        else
+            export PATH="/Users/matthewjames/opt/anaconda3/bin:$PATH"
+        fi
     fi
+    unset __conda_setup
+elif command pacman > /dev/null; then
+    # Arch Linux
+    __conda_setup="$('/home/matt/opt/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+    if [ $? -eq 0 ]; then
+        eval "$__conda_setup"
+    else
+        if [ -f "/home/matt/opt/anaconda3/etc/profile.d/conda.sh" ]; then
+            . "/home/matt/opt/anaconda3/etc/profile.d/conda.sh"
+        else
+            export PATH="/home/matt/opt/anaconda3/bin:$PATH"
+        fi
+    fi
+    unset __conda_setup
 fi
-unset __conda_setup
 # <<< conda initialize <<<
 
 
@@ -115,9 +123,4 @@ source ${ZDOTDIR}/.zfunctions
 
 # === ALIASES =========================
 source ${ZDOTDIR}/.zaliasrc
-
-
-# === SYNTAX HIGHLIGHTING =============
-# Must appear last in .zshrc:
-#source $ZPLUGINS/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
