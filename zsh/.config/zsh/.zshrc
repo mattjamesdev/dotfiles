@@ -9,9 +9,13 @@
 # === PLUGINS =========================
 # Download the plugin manager if not already installed
 if [[ ! -f ${ZDOTDIR}/.zcomet/bin/zcomet.zsh ]]; then
-  command git clone https://github.com/mattjamesdev/zcomet.git ${ZDOTDIR}/.zcomet/bin
+  command git clone https://github.com/agkozak/zcomet.git ${ZDOTDIR}/.zcomet/bin
 fi
 source ${ZDOTDIR}/.zcomet/bin/zcomet.zsh
+# Set custom directories
+ZCOMET[HOME_DIR]=${ZDOTDIR}/.zcomet
+ZCOMET[REPOS_DIR]=${ZCOMET[HOME_DIR]}/repos
+ZCOMET[SNIPPETS_DIR]=${ZCOMET[HOME_DIR]}/snippets
 
 # Load plugins
 zcomet load romkatv/powerlevel10k
