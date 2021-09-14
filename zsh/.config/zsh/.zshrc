@@ -8,15 +8,7 @@
 
 # === PLUGINS =========================
 # Download the plugin manager if not already installed
-if [[ ! -f ${HOME}/.config/zcomet/bin/zcomet.zsh ]]; then
-  command git clone https://github.com/agkozak/zcomet.git ${HOME}/.config/zcomet/bin
-fi
-# Initialise the plugin manager
-source ~/.config/zcomet/bin/zcomet.zsh
-
-# Load plugins
-zcomet load romkatv/powerlevel10k
-zcomet load zsh-users/zsh-syntax-highlighting
+# TODO: Make script to install plugins if not installed.
 
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.config/zsh/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
@@ -60,9 +52,6 @@ zmodload zsh/complist
 compinit
 _comp_options+=(globdots) # Include hidden (".*") files.
 
-# Compile the autocomplete file in zcomet (speeds up autocomplete)
-zcomet compile "${HOME}/.config/zsh/.zcompinit"
-
 
 # === VI MODE =========================
 bindkey -v
@@ -86,7 +75,7 @@ export PROMPT='%F{046}%n@%m %*%f in %F{135}%~%f ${vcs_info_msg_0_}
 
 # === THEME ===========================
 # Warning: Overrides custom prompt configurations set in this file.
-#source $ZPLUGINS/themes/powerlevel10k/powerlevel10k.zsh-theme
+source $ZPLUGINS/themes/powerlevel10k/powerlevel10k.zsh-theme
 
 
 # === POWERLEVEL10k ===================
