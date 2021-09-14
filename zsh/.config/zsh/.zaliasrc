@@ -18,7 +18,7 @@ alias python="python3"
 
 # -----------------------------------------------------------------------------
 # macOS exclusive
-if `uname` == "Darwin"; then
+if [[ `uname` == "Darwin" ]]; then
     alias firefox="/Applications/Firefox.app/Contents/MacOS/firefox &>/dev/null &"
     alias telnet="gtelnet"
     # R/Rstudio

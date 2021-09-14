@@ -23,7 +23,7 @@ function git() {
 
 # macOS only
 # Add a "port export" command 
-if `uname` == "Darwin"; then
+if [[ `uname` == "Darwin" ]]; then
     function port() {
         if [ "$1" = 'export' ]; then
             shift
