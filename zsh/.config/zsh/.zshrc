@@ -8,7 +8,15 @@
 
 # === PLUGINS =========================
 # Download the plugin manager if not already installed
-# TODO: Make script to install plugins if not installed.
+if [[ ! -f ${ZDOTDIR}/.zcomet/bin/zcomet.zsh ]]; then
+  command git clone https://github.com/mattjamesdev/zcomet.git ${ZDOTDIR}/.zcomet/bin
+fi
+source ${ZDOTDIR}/.zcomet/bin/zcomet.zsh
+
+# Load plugins
+zcomet load romkatv/powerlevel10k
+zcomet load zsh-users/zsh-syntax-highlighting
+
 
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.config/zsh/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
@@ -52,6 +60,9 @@ zmodload zsh/complist
 compinit
 _comp_options+=(globdots) # Include hidden (".*") files.
 
+# Compile compinit's dumpfile to wordcode
+zcomet compile "$ZDOTDIR/.zcompinit"
+
 
 # === VI MODE =========================
 bindkey -v
@@ -75,7 +86,7 @@ export PROMPT='%F{046}%n@%m %*%f in %F{135}%~%f ${vcs_info_msg_0_}
 
 # === THEME ===========================
 # Warning: Overrides custom prompt configurations set in this file.
-source $ZPLUGINS/themes/powerlevel10k/powerlevel10k.zsh-theme
+#source $ZPLUGINS/themes/powerlevel10k/powerlevel10k.zsh-theme
 
 
 # === POWERLEVEL10k ===================
@@ -100,13 +111,13 @@ unset __conda_setup
 
 
 # === FUNCTIONS =======================
-source ${HOME}/.config/zsh/.zfunctions
+source ${ZDOTDIR}/.zfunctions
 
 # === ALIASES =========================
-source ${HOME}/.config/zsh/.zaliasrc
+source ${ZDOTDIR}/.zaliasrc
 
 
 # === SYNTAX HIGHLIGHTING =============
 # Must appear last in .zshrc:
-source $ZPLUGINS/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+#source $ZPLUGINS/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
