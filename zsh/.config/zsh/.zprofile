@@ -2,8 +2,6 @@
 
 if [[ `uname` == "Darwin" ]]; then
     # macOS
-    export XDG_CONFIG_HOME="$HOME/.config"
- 
     #eval "${/usr/libexec/path_helper -s}"  # Set default PATH
     export PATH="$PATH:$HOME/opt/anaconda3/bin"          # Anaconda
     export PATH="$PATH:/opt/local/bin:/opt/local/sbin"   # Macports
