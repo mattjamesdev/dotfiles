@@ -17,7 +17,7 @@ if [[ `uname` == "Darwin" ]]; then
     export MANPATH="/opt/local/share/man:$MANPATH"  # Macports
     typeset -U MANPATH
 
-elif command pacman > /dev/null; then
+elif command -v pacman > /dev/null; then
     # Arch Linux
     export PATH="$PATH:$HOME/bin/matt"
     if [[ -d "$HOME/.pyenv" ]]; then  # Pyenv
@@ -26,7 +26,7 @@ elif command pacman > /dev/null; then
         eval "$(pyenv init --path)"  # evaluates 'export PATH="$PYENV_ROOT/shims:$PATH"'
     fi
 
-elif command apt > /dev/null; then
+elif command -v apt > /dev/null; then
     # Debian/Raspberry Pi
     export PATH="$PATH:$HOME/bin"
 fi
