@@ -1,10 +1,5 @@
 #!/bin/zsh
 
-# Clear records of all browser downloads
-# https://www.macgasm.net/news/tips/good-morning-your-mac-keeps-a-log-of-all-your-downloads/
-function cleardl() {
-    sqlite3 ~/Library/Preferences/com.apple.LaunchServices.QuarantineEventsV* 'delete from LSQuarantineEvent'
-}
 
 # Add a "git root" command (https://www.youtube.com/watch?v=C5aRtq-Rtbg)
 function git() {
@@ -22,8 +17,14 @@ function git() {
 }
 
 # macOS only
-# Add a "port export" command 
 if [[ `uname` == "Darwin" ]]; then
+    # Clear records of all browser downloads
+    # https://www.macgasm.net/news/tips/good-morning-your-mac-keeps-a-log-of-all-your-downloads/
+    function cleardl() {
+        sqlite3 ~/Library/Preferences/com.apple.LaunchServices.QuarantineEventsV* 'delete from LSQuarantineEvent'
+    }
+
+    # Add a "port export" command 
     function port() {
         if [ "$1" = 'export' ]; then
             shift
