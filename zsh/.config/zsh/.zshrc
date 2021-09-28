@@ -122,6 +122,11 @@ fi
 # <<< conda initialize <<<
 
 
+# === HISTORY =========================
+export HISTFILE="$ZDOTDIR/.zsh_history"
+export HISTSIZE=1000
+export SAVEHIST=2000
+
 # === FUNCTIONS =======================
 source ${ZDOTDIR}/.zfunctions
 

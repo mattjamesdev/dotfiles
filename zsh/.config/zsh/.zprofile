@@ -24,7 +24,6 @@ elif command -v pacman > /dev/null; then
         export PYENV_ROOT="$HOME/.pyenv"
         export PATH="$PYENV_ROOT/bin:$PATH"  # Pyenv
         eval "$(pyenv init --path)"  # evaluates 'export PATH="$PYENV_ROOT/shims:$PATH"'
-        export HISTFILE="$ZDOTDIR/.zsh_history"
     fi
 
 elif command -v apt > /dev/null; then
