@@ -107,14 +107,14 @@ if [[ `uname` == "Darwin" ]]; then
     unset __conda_setup
 elif command -v pacman > /dev/null; then
     # Arch Linux
-    __conda_setup="$('/home/matt/opt/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+    __conda_setup="$('/home/matt/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
     if [ $? -eq 0 ]; then
         eval "$__conda_setup"
     else
-        if [ -f "/home/matt/opt/anaconda3/etc/profile.d/conda.sh" ]; then
-            . "/home/matt/opt/anaconda3/etc/profile.d/conda.sh"
+        if [ -f "/home/matt/miniconda3/etc/profile.d/conda.sh" ]; then
+            . "/home/matt/miniconda3/etc/profile.d/conda.sh"
         else
-            export PATH="/home/matt/opt/anaconda3/bin:$PATH"
+            export PATH="/home/matt/miniconda3/bin:$PATH"
         fi
     fi
     unset __conda_setup
