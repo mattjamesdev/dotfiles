@@ -24,4 +24,6 @@ if [[ `uname` == "Darwin" ]]; then
     # R/Rstudio
     # https://stackoverflow.com/questions/58923166/installing-r-studio-with-anaconda
     alias rstudio="/Applications/RStudio.app/Contents/MacOS/RStudio &"
+elif command -v pacman &> /dev/null; then
+    alias rstudio="rstudio-bin &"
 fi
