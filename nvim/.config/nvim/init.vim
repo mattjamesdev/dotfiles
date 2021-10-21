@@ -20,7 +20,7 @@ set ignorecase
 set smartcase
 "set nohlsearch
 set incsearch  " default is already on
-set scrolloff=10
+set scrolloff=99
 set colorcolumn=80
 :hi ColorColumn ctermbg=240
 :hi CursorLineNR cterm=NONE ctermbg=240
