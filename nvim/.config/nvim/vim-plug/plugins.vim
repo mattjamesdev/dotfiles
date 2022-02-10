@@ -10,5 +10,4 @@ call plug#begin('~/.config/nvim/autoload/plugged')
 Plug 'scrooloose/nerdtree'
 Plug 'itchyny/lightline.vim'
 Plug 'ap/vim-css-color'
-Plug 'wincent/command-t'
 call plug#end()
