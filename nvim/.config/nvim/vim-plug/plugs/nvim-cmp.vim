@@ -29,7 +29,17 @@ cmp.setup({
         { name = 'vsnip' }, -- For vsnip users.
     }, {
         { name = 'buffer' },
-    })
+    }),
+    
+    -- Disable completion if writing a comment
+    -- https://github.com/hrsh7th/nvim-cmp/pull/676
+    enabled = function()
+        if require"cmp.config.context".in_treesitter_capture("comment")==true or require"cmp.config.context".in_syntax_group("Comment") then
+            return false
+        else
+            return true
+        end
+    end
 })
 
 -- Use buffer source for `/` (if you enabled `native_menu`, this won't work anymore).
