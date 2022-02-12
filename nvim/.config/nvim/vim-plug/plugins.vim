@@ -28,6 +28,14 @@ Plug 'hrsh7th/vim-vsnip'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 
+Plug 'tpope/vim-commentary'
+
+Plug 'windwp/nvim-autopairs'
+
+Plug 'akinsho/toggleterm.nvim'
+
+Plug 'onsails/lspkind-nvim'
+
 call plug#end()
 
 " Colour scheme
@@ -49,3 +57,9 @@ source $HOME/.config/nvim/vim-plug/plugs/nvim-lsp-installer.vim
 
 " nvim-cmp
 source $HOME/.config/nvim/vim-plug/plugs/nvim-cmp.vim
+
+" nvim-autopairs
+source $HOME/.config/nvim/vim-plug/plugs/nvim-autopairs.vim
+
+" toggleterm.nvim
+lua require('toggleterm').setup({})
