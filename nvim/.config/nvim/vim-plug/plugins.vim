@@ -36,6 +36,10 @@ colorscheme codedark
 " NERDTree
 command Nt NERDTree
 let g:NERDTreeWinSize=40
+" Automatically exit Neovim if NERDTree is the last remaining buffer:
+" https://www.reddit.com/r/vim/comments/nav78k/make_nerdtree_work_with_tabs_and_sessions/
+autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() |
+    \ quit | endif
 
 " Treesitter
 source $HOME/.config/nvim/vim-plug/plugs/treesitter.vim
