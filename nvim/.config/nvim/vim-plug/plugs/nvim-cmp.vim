@@ -5,6 +5,7 @@ set completeopt=menu,menuone,noselect
 lua <<EOF
 -- Setup nvim-cmp.
 local cmp = require'cmp'
+local lspkind = require('lspkind')
 
 cmp.setup({
     snippet = {
@@ -32,14 +33,32 @@ cmp.setup({
     }),
     
     -- Disable completion if writing a comment
-    -- https://github.com/hrsh7th/nvim-cmp/pull/676
+    -- https://github.com/hrsh7th/nvim-cmp/wiki/Advanced-techniques
     enabled = function()
-        if require"cmp.config.context".in_treesitter_capture("comment")==true or require"cmp.config.context".in_syntax_group("Comment") then
-            return false
-        else
+        -- Disable completion when writing comments
+        local context = require('cmp.config.context')
+        -- Keep command mode completion if cursor is in a comment
+        if vim.api.nvim_get_mode().mode == 'c' then
             return true
+        else
+            return not context.in_treesitter_capture('comment')
+            and not context.in_syntax_group('Comment')
         end
-    end
+    end,
+
+    -- Get VSCode-style pictograms with lspkind-nvim
+    formatting = {
+        format = lspkind.cmp_format({
+            mode = 'symbol', -- show only symbol annotations
+            maxwidth = 50, -- prevent the popup from showing more than provided characters (e.g 50 will not show more than 50 characters)
+
+            -- The function below will be called before any actual modifications from lspkind
+            -- so that you can provide more controls on popup customization. (See [#30](https://github.com/onsails/lspkind-nvim/pull/30))
+            before = function (entry, vim_item)
+                return vim_item
+            end
+        })
+    }
 })
 
 -- Use buffer source for `/` (if you enabled `native_menu`, this won't work anymore).
