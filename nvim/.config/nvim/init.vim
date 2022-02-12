@@ -47,6 +47,10 @@ vnoremap ( <esc>`>a)<esc>`<i(<esc>
 vnoremap [ <esc>`>a]<esc>`<i[<esc>
 vnoremap { <esc>`>a}<esc>`<i{<esc>
 
+" Reselect after indenting
+vnoremap > >gv
+vnoremap < <gv
+
 " --------------------------------- Leaders -----------------------------------
 let mapleader=' '
 
