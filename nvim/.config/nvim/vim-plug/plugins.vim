@@ -25,6 +25,9 @@ Plug 'hrsh7th/nvim-cmp'
 Plug 'hrsh7th/cmp-vsnip'
 Plug 'hrsh7th/vim-vsnip'
 
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim'
+
 call plug#end()
 
 " Colour scheme
@@ -32,6 +35,7 @@ colorscheme codedark
 
 " NERDTree
 command Nt NERDTree
+let g:NERDTreeWinSize=40
 
 " Treesitter
 source $HOME/.config/nvim/vim-plug/plugs/treesitter.vim
