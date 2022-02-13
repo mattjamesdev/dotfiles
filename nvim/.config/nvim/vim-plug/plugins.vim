@@ -8,7 +8,7 @@ endif
 " Load plugins
 call plug#begin('~/.config/nvim/autoload/plugged')
 Plug 'scrooloose/nerdtree'
-Plug 'itchyny/lightline.vim'
+Plug 'nvim-lualine/lualine.nvim'
 Plug 'ap/vim-css-color'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'neovim/nvim-lspconfig'
@@ -40,6 +40,9 @@ call plug#end()
 
 " Colour scheme
 colorscheme codedark
+
+" Lualine status line
+lua require('lualine').setup()
 
 " NERDTree
 command Nt NERDTree
