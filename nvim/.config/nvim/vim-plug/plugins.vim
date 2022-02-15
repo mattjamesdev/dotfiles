@@ -28,13 +28,13 @@ Plug 'hrsh7th/vim-vsnip'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 
-Plug 'tpope/vim-commentary'
-
-Plug 'windwp/nvim-autopairs'
-
-Plug 'akinsho/toggleterm.nvim'
-
-Plug 'onsails/lspkind-nvim'
+Plug 'tpope/vim-commentary'  " Shortcut to comment out lines/selection
+Plug 'windwp/nvim-autopairs'  " Automatic bracket and quote pairs
+Plug 'kyazdani42/nvim-web-devicons'
+Plug 'akinsho/bufferline.nvim'  " Buffer line
+Plug 'akinsho/toggleterm.nvim'  " Better terminal in Neovim
+Plug 'onsails/lspkind-nvim'  " VSCode-like pictograms for completion
+Plug 'lukas-reineke/indent-blankline.nvim'  " Show indentation lines
 
 call plug#end()
 
@@ -66,3 +66,7 @@ source $HOME/.config/nvim/vim-plug/plugs/nvim-autopairs.vim
 
 " toggleterm.nvim
 lua require('toggleterm').setup({})
+
+" bufferline.nvim
+set termguicolors
+lua require('bufferline').setup({})
