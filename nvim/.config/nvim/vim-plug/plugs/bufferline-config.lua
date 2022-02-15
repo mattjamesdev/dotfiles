@@ -2,8 +2,8 @@ require('bufferline').setup({
     options = {
         offsets = {
             {
-                filetype = 'NERDTree',
-                text = 'File Explorer',
+                filetype = 'nerdtree', -- Get this with :echo &filetype
+                text = 'NERDTree',
                 highlight = 'Directory',
                 text_align = 'left'
             }
