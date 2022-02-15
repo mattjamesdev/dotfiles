@@ -69,4 +69,4 @@ lua require('toggleterm').setup({})
 
 " bufferline.nvim
 set termguicolors
-lua require('bufferline').setup({})
+lua require('vim-plug.plugs.bufferline-config')
