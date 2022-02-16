@@ -53,20 +53,20 @@ autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTr
     \ quit | endif
 
 " Treesitter
-source $HOME/.config/nvim/vim-plug/plugs/treesitter.vim
+lua require('plugins.treesitter')
 
 " nvim-lsp-installer
-source $HOME/.config/nvim/vim-plug/plugs/nvim-lsp-installer.vim
+lua require('plugins.nvim-lsp-installer')
 
 " nvim-cmp
-source $HOME/.config/nvim/vim-plug/plugs/nvim-cmp.vim
+lua require('plugins.nvim-cmp')
 
 " nvim-autopairs
-source $HOME/.config/nvim/vim-plug/plugs/nvim-autopairs.vim
+lua require('plugins.nvim-autopairs')
 
 " toggleterm.nvim
 lua require('toggleterm').setup({})
 
 " bufferline.nvim
 set termguicolors
-lua require('vim-plug.plugs.bufferline-config')
+lua require('plugins.bufferline-config')

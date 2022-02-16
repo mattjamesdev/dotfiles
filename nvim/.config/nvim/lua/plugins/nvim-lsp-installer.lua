@@ -1,5 +1,4 @@
-" Configuration for nvim-lsp-installer (copied from the GitHub page)
-lua <<EOF
+-- Configuration for nvim-lsp-installer (copied from the GitHub page)
 local lsp_installer = require("nvim-lsp-installer")
 
 local function on_attach(client, bufnr)
@@ -39,6 +38,3 @@ lsp_installer.on_server_ready(function(server)
     end
     server:setup(opts)
 end)
-
-
-EOF

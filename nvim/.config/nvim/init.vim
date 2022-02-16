@@ -56,7 +56,7 @@ let mapleader=' '
 
 " --------------------------------- Plugins -----------------------------------
 " Load plugins (vim-plug)
-source $HOME/.config/nvim/vim-plug/plugins.vim
+source $HOME/.config/nvim/plugins.vim
 
 " Hide current mode (already shown in Lightline)
 set noshowmode

@@ -1,5 +1,4 @@
-" Configuration for Treesitter
-lua <<EOF
+-- Configuration for Treesitter
 require'nvim-treesitter.configs'.setup {
     ensure_installed = {
         "python", 
@@ -19,4 +18,3 @@ require'nvim-treesitter.configs'.setup {
         additional_vim_regex_highlighting = false,
     },
 }
-EOF

@@ -1,8 +1,8 @@
-" Configuration for nvim-cmp (completion)
+-- Configuration for nvim-cmp (completion)
 
-set completeopt=menu,menuone,noselect
+-- vim.cmd('set completeopt=menu,menuone,noselect')
+vim.o.completeopt = 'menu,menuone,noselect'
 
-lua <<EOF
 -- Setup nvim-cmp.
 local cmp = require'cmp'
 local lspkind = require('lspkind')
@@ -84,4 +84,3 @@ local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protoco
 --require('lspconfig')['pyright'].setup {
 --    capabilities = capabilities
 --    }
-EOF
