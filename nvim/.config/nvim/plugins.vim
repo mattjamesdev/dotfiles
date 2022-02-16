@@ -7,7 +7,6 @@ endif
 
 " Load plugins
 call plug#begin('~/.config/nvim/autoload/plugged')
-Plug 'scrooloose/nerdtree'
 Plug 'nvim-lualine/lualine.nvim'
 Plug 'ap/vim-css-color'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
@@ -31,6 +30,7 @@ Plug 'nvim-telescope/telescope.nvim'
 Plug 'tpope/vim-commentary'  " Shortcut to comment out lines/selection
 Plug 'windwp/nvim-autopairs'  " Automatic bracket and quote pairs
 Plug 'kyazdani42/nvim-web-devicons'
+Plug 'kyazdani42/nvim-tree.lua'
 Plug 'akinsho/bufferline.nvim'  " Buffer line
 Plug 'akinsho/toggleterm.nvim'  " Better terminal in Neovim
 Plug 'onsails/lspkind-nvim'  " VSCode-like pictograms for completion
@@ -44,13 +44,8 @@ colorscheme codedark
 " Lualine status line
 lua require('lualine').setup()
 
-" NERDTree
-command Nt NERDTree
-let g:NERDTreeWinSize=40
-" Automatically exit Neovim if NERDTree is the last remaining buffer:
-" https://www.reddit.com/r/vim/comments/nav78k/make_nerdtree_work_with_tabs_and_sessions/
-autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() |
-    \ quit | endif
+" nvim-tree
+lua require('plugins.nvim-tree-config')
 
 " Treesitter
 lua require('plugins.treesitter-config')
