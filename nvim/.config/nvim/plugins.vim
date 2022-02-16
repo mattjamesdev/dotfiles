@@ -53,16 +53,16 @@ autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTr
     \ quit | endif
 
 " Treesitter
-lua require('plugins.treesitter')
+lua require('plugins.treesitter-config')
 
 " nvim-lsp-installer
-lua require('plugins.nvim-lsp-installer')
+lua require('plugins.nvim-lsp-installer-config')
 
 " nvim-cmp
-lua require('plugins.nvim-cmp')
+lua require('plugins.nvim-cmp-config')
 
 " nvim-autopairs
-lua require('plugins.nvim-autopairs')
+lua require('plugins.nvim-autopairs-config')
 
 " toggleterm.nvim
 lua require('toggleterm').setup({})
