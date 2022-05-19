@@ -8,7 +8,9 @@ require'nvim-treesitter.configs'.setup {
         "lua", 
         "bash", 
         "regex", 
-        "json"
+        "json",
+        "javascript",
+        "html"
     },
 
     -- Syntax highlighting
