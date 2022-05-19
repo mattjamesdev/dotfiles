@@ -54,6 +54,9 @@ vnoremap < <gv
 " --------------------------------- Leaders -----------------------------------
 let mapleader=' '
 
+" ----------------------------- Neovim Python ---------------------------------
+let g:python3_host_prog = $HOME . '/.pyenv/versions/3.9.5/envs/neovim/bin/python'
+
 " --------------------------------- Plugins -----------------------------------
 " Load plugins (vim-plug)
 source $HOME/.config/nvim/plugins.vim
@@ -69,5 +72,3 @@ augroup vimrc-incsearch-highlight
     autocmd InsertEnter * :set nohlsearch
 augroup END
 
-" ----------------------------- Neovim Python ---------------------------------
-let g:python3_host_prog = $HOME . '/.pyenv/versions/3.9.5/envs/neovim/bin/python'
