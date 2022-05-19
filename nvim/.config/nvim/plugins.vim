@@ -8,7 +8,6 @@ endif
 " Load plugins
 call plug#begin('~/.config/nvim/autoload/plugged')
 Plug 'nvim-lualine/lualine.nvim'
-Plug 'ap/vim-css-color'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'neovim/nvim-lspconfig'
 Plug 'williamboman/nvim-lsp-installer'
