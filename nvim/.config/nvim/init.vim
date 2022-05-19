@@ -69,3 +69,5 @@ augroup vimrc-incsearch-highlight
     autocmd InsertEnter * :set nohlsearch
 augroup END
 
+" ----------------------------- Neovim Python ---------------------------------
+let g:python3_host_prog = $HOME . '/.pyenv/versions/3.9.5/envs/neovim/bin/python'
