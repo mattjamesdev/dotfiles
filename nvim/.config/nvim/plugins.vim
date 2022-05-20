@@ -49,11 +49,8 @@ lua require('plugins.nvim-tree-config')
 " Treesitter
 lua require('plugins.treesitter-config')
 
-" nvim-lsp-installer
-lua require('plugins.nvim-lsp-installer-config')
-
-" nvim-cmp
-lua require('plugins.nvim-cmp-config')
+" LSP (lspconfig, nvim-cmp, lsp-installer)
+lua require('plugins.nvim-lsp')
 
 " nvim-autopairs
 lua require('plugins.nvim-autopairs-config')

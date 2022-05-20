@@ -1,8 +1,12 @@
--- Configuration for nvim-cmp (completion)
+--
+-- LSP configurations
+--
 
 -- vim.cmd('set completeopt=menu,menuone,noselect')
 vim.o.completeopt = 'menu,menuone,noselect'
 
+
+-- Configuration for nvim-cmp (completion)
 -- Setup nvim-cmp.
 local cmp = require'cmp'
 local lspkind = require('lspkind')
@@ -77,10 +81,31 @@ cmp.setup.cmdline(':', {
     })
 })
 
+
+-------------------------------------------------------------------------------
+-- Configuration for nvim-lsp-installer (copied from the GitHub page)
+local lsp_installer = require("nvim-lsp-installer")
+lsp_installer.setup {}
+
+
+-------------------------------------------------------------------------------
 -- Setup lspconfig.
 local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
--- Replace <YOUR_LSP_SERVER> with each lsp server you've enabled.
--- (taken care of by nvim-lsp-installer)
---require('lspconfig')['pyright'].setup {
---    capabilities = capabilities
---    }
+require('lspconfig').pyright.setup {
+    capabilities = capabilities
+}
+
+require('lspconfig').sumneko_lua.setup {
+    capabilities = capabilities,
+    settings = {
+        Lua = {
+            diagnostics = {
+                disable = vim.split('trailing-space', ", "),
+                globals = vim.split('vim', ", "),
+            }
+        }
+    }
+}
+
+
+
