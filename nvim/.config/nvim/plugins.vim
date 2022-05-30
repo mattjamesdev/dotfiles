@@ -35,6 +35,10 @@ Plug 'akinsho/toggleterm.nvim'  " Better terminal in Neovim
 Plug 'onsails/lspkind-nvim'  " VSCode-like pictograms for completion
 Plug 'lukas-reineke/indent-blankline.nvim'  " Show indentation lines
 
+" Plug 'jose-elias-alvarez/null-ls.nvim'
+" Plug 'sbdchd/neoformat'
+Plug 'mattn/efm-langserver'
+
 call plug#end()
 
 " Colour scheme
@@ -61,3 +65,12 @@ lua require('toggleterm').setup({})
 " bufferline.nvim
 set termguicolors
 lua require('plugins.bufferline-config')
+
+" null-ls
+"lua  require('plugins.null-ls-config')
+
+" neoformat
+"let g:neoformat_verbose = 1
+
+" efm-langserver
+lua require('plugins.efm-langserver-config')

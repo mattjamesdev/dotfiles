@@ -72,8 +72,8 @@ augroup vimrc-incsearch-highlight
     autocmd InsertEnter * :set nohlsearch
 augroup END
 
-augroup fmt
-    autocmd!
-    autocmd BufWritePre *.py lua vim.lsp.buf.formatting_sync()
-augroup END
+" augroup fmt
+"     autocmd!
+"     autocmd BufWritePre *.py lua vim.lsp.buf.formatting_sync()
+" augroup END
 
