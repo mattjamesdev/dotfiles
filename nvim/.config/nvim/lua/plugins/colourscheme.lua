@@ -1,1 +1,2 @@
-vim.cmd('colorscheme codedark')
+vim.o.background = 'dark'
+vim.cmd('colorscheme vscode')
