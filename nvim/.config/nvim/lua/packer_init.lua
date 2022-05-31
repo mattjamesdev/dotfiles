@@ -28,10 +28,14 @@ local plugins = require('packer').startup(function(use)
 	use {
 		'hrsh7th/nvim-cmp', 
 		requires = {
-			{'hrsh7th/cmp-vsnip', opt = true},
-			{'hrsh7th/vim-vsnip', opt = true},
+			{'hrsh7th/cmp-vsnip', opt = false},
+			{'hrsh7th/vim-vsnip', opt = false},
+			-- {'L3MON4D3/LuaSnip', opt = false},
+			-- {'saadparwaiz1/cmp_luasnip', opt = false},
 		}
 	}
+	use 'hrsh7th/cmp-nvim-lsp-signature-help'
+	use 'hrsh7th/cmp-nvim-lua'
 
 	use {
 		'nvim-telescope/telescope.nvim',
