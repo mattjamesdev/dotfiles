@@ -14,47 +14,54 @@ end
 
 local plugins = require('packer').startup(function(use)
   use 'wbthomason/packer.nvim'
-  
+
   use 'nvim-lualine/lualine.nvim'
-  use {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'}
+  use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
   use 'neovim/nvim-lspconfig'
   use 'williamboman/nvim-lsp-installer'
   use 'Mofiqul/vscode.nvim'
 
-	use 'hrsh7th/cmp-nvim-lsp'
-	use 'hrsh7th/cmp-buffer'
-	use 'hrsh7th/cmp-path'
-	use 'hrsh7th/cmp-cmdline'
-	use {
-		'hrsh7th/nvim-cmp', 
-		requires = {
-			{'hrsh7th/cmp-vsnip', opt = false},
-			{'hrsh7th/vim-vsnip', opt = false},
-			-- {'L3MON4D3/LuaSnip', opt = false},
-			-- {'saadparwaiz1/cmp_luasnip', opt = false},
-		}
-	}
-	use 'hrsh7th/cmp-nvim-lsp-signature-help'
-	use 'hrsh7th/cmp-nvim-lua'
+  use 'hrsh7th/cmp-nvim-lsp'
+  use 'hrsh7th/cmp-buffer'
+  use 'hrsh7th/cmp-path'
+  use 'hrsh7th/cmp-cmdline'
+  use {
+    'hrsh7th/nvim-cmp',
+    requires = {
+      { 'hrsh7th/cmp-vsnip', opt = false },
+      { 'hrsh7th/vim-vsnip', opt = false },
+      -- {'L3MON4D3/LuaSnip', opt = false},
+      -- {'saadparwaiz1/cmp_luasnip', opt = false},
+    }
+  }
+  use 'hrsh7th/cmp-nvim-lsp-signature-help'
+  use 'hrsh7th/cmp-nvim-lua'
 
-	use {
-		'nvim-telescope/telescope.nvim',
-		requires = {
-			{'nvim-lua/plenary.nvim'}
-		}
-	}
+  use {
+    'nvim-telescope/telescope.nvim',
+    requires = {
+      { 'nvim-lua/plenary.nvim' }
+    }
+  }
 
-	
-	use 'tpope/vim-commentary'  -- Shortcut to comment out lines/selection
-	use 'windwp/nvim-autopairs'  -- Automatic bracket and quote pairs
-	use 'kyazdani42/nvim-web-devicons'
-	use 'kyazdani42/nvim-tree.lua'
-	use 'akinsho/bufferline.nvim'  -- Buffer line
-	use 'akinsho/toggleterm.nvim'  -- Better terminal in Neovim
-	use 'onsails/lspkind-nvim'  -- VSCode-like pictograms for completion
-	use 'lukas-reineke/indent-blankline.nvim'  -- Show indentation lines
 
-	use 'mattn/efm-langserver'
+  use 'tpope/vim-commentary' -- Shortcut to comment out lines/selection
+  use 'windwp/nvim-autopairs' -- Automatic bracket and quote pairs
+  use {
+    'goolord/alpha-nvim',
+    requires = {
+      'kyazdani42/nvim-web-devicons'
+    }
+  }
+  use 'kyazdani42/nvim-tree.lua'
+  use 'akinsho/bufferline.nvim' -- Buffer line
+  use 'akinsho/toggleterm.nvim' -- Better terminal in Neovim
+  use 'onsails/lspkind-nvim' -- VSCode-like pictograms for completion
+  use 'lukas-reineke/indent-blankline.nvim' -- Show indentation lines
+
+  use 'mattn/efm-langserver'
+
+  use 'folke/which-key.nvim'
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
