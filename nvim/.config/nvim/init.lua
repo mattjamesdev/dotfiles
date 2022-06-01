@@ -37,28 +37,6 @@ vim.api.nvim_set_hl(0, 'LineNr', { ctermfg = 'grey' })
 vim.api.nvim_set_hl(0, 'ColorColumn', { ctermbg = 240 })
 vim.api.nvim_set_hl(0, 'CursorLineNR', { cterm = nil, ctermbg = 240 })
 
--- ================================= Remaps ===================================
-local opts = { noremap = true, silent = true }
--- Move selected lines up/down with J/K in visual line mode
--- https://www.youtube.com/watch?v=QN4fuSsWTbA - at 10:11
-vim.api.nvim_set_keymap('v', 'J', ":m '>+1<CR>gv=gv", opts)
-vim.api.nvim_set_keymap('v', 'K', ":m '<-2<CR>gv=gv", opts)
-
--- Add quotes/brackets around visual selection
-vim.api.nvim_set_keymap('v', '"', '<esc>`>a"<esc>`<i"<esc>', opts)
-vim.api.nvim_set_keymap('v', "'", "<esc>`>a'<esc>`<i'<esc>", opts)
-vim.api.nvim_set_keymap('v', '(', '<esc>`>a)<esc>`<i(<esc>', opts)
-vim.api.nvim_set_keymap('v', '[', '<esc>`>a]<esc>`<i[<esc>', opts)
-vim.api.nvim_set_keymap('v', '{', '<esc>`>a}<esc>`<i{<esc>', opts)
-
--- Reselect after indenting
-vim.api.nvim_set_keymap('v', '>', '>gv', opts)
-vim.api.nvim_set_keymap('v', '<', '<gv', opts)
-
------------------------------------ Leaders -----------------------------------
-vim.g.mapleader = ' '
-
-vim.api.nvim_set_keymap('n', '<leader>e', '<cmd>lua vim.diagnostic.open_float()<CR>', opts)
 
 ------------------------------- Neovim Python ---------------------------------
 vim.g.python3_host_prog = '~/.pyenv/versions/3.9.5/envs/neovim/bin/python'
@@ -76,6 +54,9 @@ require('plugins.toggleterm')
 require('plugins.bufferline')
 --require('plugins.null-ls')
 require('plugins.efm-langserver')
+require('plugins.alpha-nvim')
+require('plugins.which-key')
+require('keymaps')
 
 -- Hide current mode (already shown in Lightline)
 vim.o.showmode = false
