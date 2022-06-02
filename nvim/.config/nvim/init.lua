@@ -56,6 +56,8 @@ require('plugins.bufferline')
 require('plugins.efm-langserver')
 require('plugins.alpha-nvim')
 require('plugins.which-key')
+
+----------------------------------- Keymaps -----------------------------------
 require('keymaps')
 
 -- Hide current mode (already shown in Lightline)
