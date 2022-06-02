@@ -63,16 +63,5 @@ require('keymaps')
 -- Hide current mode (already shown in Lightline)
 vim.o.showmode = false
 
--------------------------------- Autocommands ---------------------------------
--- Enable hlsearch when searching, then disable when entering Insert mode
-local incsearch_highlight = vim.api.nvim_create_augroup('vimrc-incsearch-highlight', {})
-vim.api.nvim_create_autocmd({ 'CmdlineEnter' }, {
-  pattern = { '/,\\?' },
-  command = 'set hlsearch',
-  group = incsearch_highlight
-})
-vim.api.nvim_create_autocmd({ 'InsertEnter' }, {
-  pattern = '*',
-  command = 'set nohlsearch',
-  group = incsearch_highlight
-})
+-- Autocommands
+require('autocommands')
