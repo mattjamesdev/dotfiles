@@ -44,7 +44,6 @@ vim.g.python3_host_prog = '~/.pyenv/versions/3.9.5/envs/neovim/bin/python'
 ----------------------------------- Plugins -----------------------------------
 -- Load plugins (packer)
 require('packer_init')
-require('plugin.packer_compiled')
 
 require('plugins.colourscheme')
 require('plugins.lualine')
