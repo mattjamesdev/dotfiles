@@ -37,6 +37,14 @@ vim.api.nvim_set_hl(0, 'LineNr', { ctermfg = 'grey' })
 vim.api.nvim_set_hl(0, 'ColorColumn', { ctermbg = 240 })
 vim.api.nvim_set_hl(0, 'CursorLineNR', { cterm = nil, ctermbg = 240 })
 
+-- Diagnostics
+vim.diagnostic.config({
+  virtual_text = true,
+  signs = true,
+  underline = true,
+  update_in_insert = true,
+  severity_sort = false,
+})
 
 ------------------------------- Neovim Python ---------------------------------
 vim.g.python3_host_prog = '~/.pyenv/versions/3.9.5/envs/neovim/bin/python'
