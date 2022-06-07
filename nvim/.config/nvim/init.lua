@@ -5,7 +5,7 @@
 -- |_|_| |_|_|\__(_)_|\__,_|\__,_|
 --
 
--- ================================== Sets ====================================
+------------------------------ General config ---------------------------------
 vim.o.ruler = true
 vim.o.ignorecase = true
 vim.o.smartcase = true
@@ -41,7 +41,7 @@ vim.api.nvim_set_hl(0, 'CursorLineNR', { cterm = nil, ctermbg = 240 })
 ------------------------------- Neovim Python ---------------------------------
 vim.g.python3_host_prog = '~/.pyenv/versions/3.9.5/envs/neovim/bin/python'
 
------------------------------------ Plugins -----------------------------------
+---------------------------------- Plugins ------------------------------------
 -- Load plugins (packer)
 require('packer_init')
 
@@ -58,7 +58,7 @@ require('plugins.efm-langserver')
 require('plugins.alpha-nvim')
 require('plugins.which-key')
 
------------------------------------ Keymaps -----------------------------------
+---------------------------------- Keymaps ------------------------------------
 require('keymaps')
 
 -- Hide current mode (already shown in Lightline)
