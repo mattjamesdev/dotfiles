@@ -10,6 +10,7 @@ vim.o.ruler = true
 vim.o.ignorecase = true
 vim.o.smartcase = true
 vim.o.scrolloff = 99
+vim.o.laststatus = 3
 
 vim.wo.signcolumn = 'yes'
 vim.wo.number = true
