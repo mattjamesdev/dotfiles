@@ -62,8 +62,6 @@ local plugins = require('packer').startup(function(use)
   use 'onsails/lspkind-nvim' -- VSCode-like pictograms for completion
   use 'lukas-reineke/indent-blankline.nvim' -- Show indentation lines
 
-  use 'mattn/efm-langserver'
-
   use 'folke/which-key.nvim'
 
   -- Automatically set up your configuration after cloning packer.nvim
