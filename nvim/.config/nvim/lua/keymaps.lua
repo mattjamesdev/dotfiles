@@ -4,6 +4,12 @@ local opts = { noremap = true, silent = true }
 vim.api.nvim_set_keymap('n', '<Space>', '<nop>', opts)
 vim.g.mapleader = ' '
 
+-- Better window movement
+vim.keymap.set('n', '<C-h>', '<C-w>h', opts)
+vim.keymap.set('n', '<C-j>', '<C-w>j', opts)
+vim.keymap.set('n', '<C-k>', '<C-w>k', opts)
+vim.keymap.set('n', '<C-l>', '<C-w>l', opts)
+
 -- Move selected lines up/down with J/K in visual line mode
 -- https://www.youtube.com/watch?v=QN4fuSsWTbA - at 10:11
 vim.api.nvim_set_keymap('v', 'J', ":m '>+1<CR>gv=gv", opts)
