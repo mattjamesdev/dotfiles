@@ -27,27 +27,25 @@ vim.keymap.set('v', '>', '>gv', opts)
 vim.keymap.set('v', '<', '<gv', opts)
 
 -- Diagnostics
-vim.keymap.set('n', '<leader>e', '<cmd>lua vim.diagnostic.open_float()<CR>', {
+vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float, {
 	desc = 'Show float diagnostics',
 	table.unpack(opts)
 })
 
--- Formatting
-vim.keymap.set('n', '<leader>fo', '<cmd>lua vim.lsp.buf.formatting_sync()<CR>',	{
-	desc = 'Format file',
-	table.unpack(opts)
-})
-
 -- Telescope
-vim.keymap.set('n', '<leader>ff', '<cmd>Telescope find_files<CR>', { 
-	desc = 'Find files (Telescope)', 
+vim.keymap.set('n', '<leader>ff', require('telescope.builtin').find_files, { 
+	desc = 'Find files', 
 	table.unpack(opts) 
 })
-vim.keymap.set('n', '<leader>fb', '<cmd>Telescope buffers<CR>', {
-	desc = 'Find buffers (Telescope)',
+vim.keymap.set('n', '<leader>fb', require('telescope.builtin').buffers, {
+	desc = 'Find buffers',
 	table.unpack(opts)
 })
-vim.keymap.set('n', '<leader>fg', '<cmd>Telescope live_grep<CR>', {
-	desc = 'Live grep (Telescope)',
+vim.keymap.set('n', '<leader>fg', require('telescope.builtin').live_grep, {
+	desc = 'Live grep',
+	table.unpack(opts)
+})
+vim.keymap.set('n', '<leader>fk', require('telescope.builtin').keymaps, {
+	desc = 'Keymaps',
 	table.unpack(opts)
 })
