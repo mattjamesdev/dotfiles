@@ -16,7 +16,7 @@ vim.wo.signcolumn = 'yes'
 vim.wo.number = true
 vim.wo.relativenumber = true
 vim.wo.wrap = false
-vim.wo.colorcolumn = '80'
+vim.wo.colorcolumn = '88'
 
 vim.bo.expandtab = true
 vim.bo.shiftwidth = 4
@@ -26,12 +26,12 @@ vim.bo.smartindent = true
 
 -- Enable mouse for scrolling only
 vim.o.mouse = 'a'
-vim.api.nvim_set_keymap('n', '<LeftMouse>', '<nop>', {})
-vim.api.nvim_set_keymap('i', '<LeftMouse>', '<nop>', {})
-vim.api.nvim_set_keymap('v', '<LeftMouse>', '<nop>', {})
-vim.api.nvim_set_keymap('n', '<2-LeftMouse>', '<nop>', {})
-vim.api.nvim_set_keymap('i', '<2-LeftMouse>', '<nop>', {})
-vim.api.nvim_set_keymap('v', '<2-LeftMouse>', '<nop>', {})
+vim.keymap.set('n', '<LeftMouse>', '<nop>', {})
+vim.keymap.set('i', '<LeftMouse>', '<nop>', {})
+vim.keymap.set('v', '<LeftMouse>', '<nop>', {})
+vim.keymap.set('n', '<2-LeftMouse>', '<nop>', {})
+vim.keymap.set('i', '<2-LeftMouse>', '<nop>', {})
+vim.keymap.set('v', '<2-LeftMouse>', '<nop>', {})
 
 -- Highlights
 vim.api.nvim_set_hl(0, 'LineNr', { ctermfg = 'grey' })
