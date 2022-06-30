@@ -66,7 +66,6 @@ require('plugins.bufferline')
 require('plugins.efm-langserver')
 require('plugins.alpha-nvim')
 require('plugins.which-key')
-require('plugins.shade')
 
 ---------------------------------- Keymaps ------------------------------------
 require('keymaps')
