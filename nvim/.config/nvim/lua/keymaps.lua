@@ -29,23 +29,23 @@ vim.keymap.set('v', '<', '<gv', opts)
 -- Diagnostics
 vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float, {
 	desc = 'Show float diagnostics',
-	table.unpack(opts)
+	unpack(opts)  -- For Lua >5.2, use "table.unpack"
 })
 
 -- Telescope
 vim.keymap.set('n', '<leader>ff', require('telescope.builtin').find_files, { 
 	desc = 'Find files', 
-	table.unpack(opts) 
+	unpack(opts) 
 })
 vim.keymap.set('n', '<leader>fb', require('telescope.builtin').buffers, {
 	desc = 'Find buffers',
-	table.unpack(opts)
+	unpack(opts)
 })
 vim.keymap.set('n', '<leader>fg', require('telescope.builtin').live_grep, {
 	desc = 'Live grep',
-	table.unpack(opts)
+	unpack(opts)
 })
 vim.keymap.set('n', '<leader>fk', require('telescope.builtin').keymaps, {
 	desc = 'Keymaps',
-	table.unpack(opts)
+	unpack(opts)
 })
