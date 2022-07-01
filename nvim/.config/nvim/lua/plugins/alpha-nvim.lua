@@ -14,7 +14,7 @@ end
 
 dashboard.section.buttons.val = {
   dashboard.button('e', '  New file', ':ene <BAR> startinsert <CR>'),
-  dashboard.button('SPC f f', '  Find file', '<cmd>Telescope find_files<CR>'),
+  dashboard.button('SPC f f', '  Find file', '<cmd>Telescope find_files hidden=true<CR>'),
   dashboard.button('SPC f g', '  Live grep', '<cmd>Telescope live_grep<CR>'),
   dashboard.button('SPC c', '  Select colourscheme', '<cmd>Telescope colorscheme<CR>'),
 	dashboard.button('SPC f d', '  Configure', '<cmd>cd ~/.config/nvim<CR><cmd>e init.lua<CR>'),

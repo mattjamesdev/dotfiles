@@ -32,10 +32,19 @@ vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float, {
 	unpack(opts)  -- For Lua >5.2, use "table.unpack"
 })
 
+-- Wrapper function to pass arguments to a function used in a keymap
+-- https://www.reddit.com/r/neovim/comments/sjiwox/comment/hvf1r02/?utm_source=share&utm_medium=web2x&context=3
+local wrap = function(func, ...)
+	local args = { ... }
+	return function()
+		func(unpack(args))
+	end
+end
+
 -- Telescope
-vim.keymap.set('n', '<leader>ff', require('telescope.builtin').find_files, { 
-	desc = 'Find files', 
-	unpack(opts) 
+vim.keymap.set('n', '<leader>ff', wrap(require('telescope.builtin').find_files, { hidden = true }), {
+	desc = 'Find files',
+	unpack(opts)
 })
 vim.keymap.set('n', '<leader>fb', require('telescope.builtin').buffers, {
 	desc = 'Find buffers',
