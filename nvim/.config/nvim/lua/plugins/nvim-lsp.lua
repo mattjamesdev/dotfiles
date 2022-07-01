@@ -134,10 +134,7 @@ require('lspconfig').sumneko_lua.setup {
 	on_attach = on_attach,
   settings = {
     Lua = {
-      diagnostics = {
-        disable = vim.split('trailing-space', ", "),
-        globals = vim.split('vim', ", "),
-      }
+      telemetry = { enable = false },
     }
   }
 }
