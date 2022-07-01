@@ -2,7 +2,7 @@
 
 -- If you want insert `(` after select function or method item
 require('nvim-autopairs').setup({
-    disable_filetype = {'TelescopePrompt', 'vim'}
+  disable_filetype = { 'TelescopePrompt', 'vim' }
 })
 
 local cmp_autopairs = require('nvim-autopairs.completion.cmp')

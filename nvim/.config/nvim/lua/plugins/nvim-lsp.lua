@@ -15,7 +15,7 @@ cmp.setup({
     -- REQUIRED - you must specify a snippet engine
     expand = function(args)
       vim.fn["vsnip#anonymous"](args.body) -- For `vsnip` users.
-			-- require('luasnip').lsp_expand(args.body) -- For `LuaSnip` users.
+      -- require('luasnip').lsp_expand(args.body) -- For `LuaSnip` users.
     end,
   },
   mapping = cmp.mapping.preset.insert({
@@ -24,25 +24,25 @@ cmp.setup({
     ['<C-Space>'] = cmp.mapping.complete(),
     ['<C-e>'] = cmp.mapping.abort(),
     ['<CR>'] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
-		['<Tab>'] = function(fallback)  -- Super tab
+    ['<Tab>'] = function(fallback) -- Super tab
       if cmp.visible() then
         cmp.select_next_item()
       else
         fallback()
       end
     end,
-		['<S-Tab>'] = function(fallback)
-			if cmp.visible() then
-				cmp.select_prev_item()
-			else
-				fallback()
-			end
-		end,
-	}),
+    ['<S-Tab>'] = function(fallback)
+      if cmp.visible() then
+        cmp.select_prev_item()
+      else
+        fallback()
+      end
+    end,
+  }),
   sources = cmp.config.sources({
     { name = 'nvim_lsp' },
     { name = 'vsnip' }, -- For vsnip users.
-		{ name = 'nvim_lsp_signature_help'}, -- Function signatures
+    { name = 'nvim_lsp_signature_help' }, -- Function signatures
     { name = 'nvim_lua' },
   }, {
     { name = 'buffer' },
@@ -104,9 +104,9 @@ lsp_installer.setup({})
 local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
 
 local on_attach = function(client, bufnr)
-	-- Mappings.
+  -- Mappings.
   -- See `:help vim.lsp.*` for documentation on any of the below functions
-	local bufopts = { noremap = true, silent = true , buffer = bufnr }
+  local bufopts = { noremap = true, silent = true, buffer = bufnr }
   vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, bufopts)
   vim.keymap.set('n', 'gd', vim.lsp.buf.definition, bufopts)
   vim.keymap.set('n', 'K', vim.lsp.buf.hover, bufopts)
@@ -115,8 +115,8 @@ local on_attach = function(client, bufnr)
   vim.keymap.set('n', '<space>wa', vim.lsp.buf.add_workspace_folder, bufopts)
   vim.keymap.set('n', '<space>wr', vim.lsp.buf.remove_workspace_folder, bufopts)
   vim.keymap.set('n', '<space>wl', function()
-		print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
-	end, bufopts)
+    print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
+  end, bufopts)
   vim.keymap.set('n', '<space>D', vim.lsp.buf.type_definition, bufopts)
   vim.keymap.set('n', '<space>rn', vim.lsp.buf.rename, bufopts)
   vim.keymap.set('n', '<space>ca', vim.lsp.buf.code_action, bufopts)
@@ -126,12 +126,12 @@ end
 
 require('lspconfig').pyright.setup {
   capabilities = capabilities,
-	on_attach = on_attach,
+  on_attach = on_attach,
 }
 
 require('lspconfig').sumneko_lua.setup {
   capabilities = capabilities,
-	on_attach = on_attach,
+  on_attach = on_attach,
   settings = {
     Lua = {
       telemetry = { enable = false },
@@ -140,7 +140,7 @@ require('lspconfig').sumneko_lua.setup {
 }
 
 require('lspconfig').tsserver.setup {
-	capabilities = capabilities,
-	on_attach = on_attach,
-	root_dir = function() return vim.loop.cwd() end,
+  capabilities = capabilities,
+  on_attach = on_attach,
+  root_dir = function() return vim.loop.cwd() end,
 }
