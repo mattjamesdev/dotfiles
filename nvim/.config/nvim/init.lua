@@ -11,18 +11,17 @@ vim.o.ignorecase = true
 vim.o.smartcase = true
 vim.o.scrolloff = 99
 vim.o.laststatus = 3
+vim.o.expandtab = true
+vim.o.shiftwidth = 4
+vim.o.tabstop = 4
+vim.o.softtabstop = 4
+vim.o.smartindent = true
 
 vim.wo.signcolumn = 'yes'
 vim.wo.number = true
 vim.wo.relativenumber = true
 vim.wo.wrap = false
 vim.wo.colorcolumn = '88'
-
-vim.bo.expandtab = true
-vim.bo.shiftwidth = 4
-vim.bo.tabstop = 4
-vim.bo.softtabstop = 4
-vim.bo.smartindent = true
 
 -- Enable mouse for scrolling only
 vim.o.mouse = 'a'
