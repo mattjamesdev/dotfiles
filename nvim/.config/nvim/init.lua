@@ -48,7 +48,8 @@ vim.diagnostic.config({
 })
 
 ------------------------------- Neovim Python ---------------------------------
-vim.g.python3_host_prog = '~/.pyenv/versions/3.9.5/envs/neovim/bin/python'
+PYTHON_PATH = vim.fn.stdpath('data') .. '/python-venv'
+vim.g.python3_host_prog = PYTHON_PATH .. '/bin/python'
 
 ---------------------------------- Plugins ------------------------------------
 -- Load plugins (packer)

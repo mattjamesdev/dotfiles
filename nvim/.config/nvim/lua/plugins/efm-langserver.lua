@@ -6,7 +6,7 @@ require("lspconfig").efm.setup {
         rootMarkers = {".git/"},
         languages = {
             python = {
-                {formatCommand = "black -", formatStdin = true}
+                {formatCommand = PYTHON_PATH .. "/bin/black -", formatStdin = true}
             }
         }
     }
