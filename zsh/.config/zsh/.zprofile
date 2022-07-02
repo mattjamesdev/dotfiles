@@ -10,7 +10,8 @@ if [[ `uname` == "Darwin" ]]; then
     if [[ -d "$HOME/.pyenv" ]]; then  # Pyenv
         export PYENV_ROOT="$HOME/.pyenv"
         export PATH="$PYENV_ROOT/bin:$PATH"
-        eval "$(pyenv init --path)"  # evaluates 'export PATH="$PYENV_ROOT/shims:$PATH"'
+        eval "$(pyenv init -)"  # initialise the pyenv command
+        eval "$(pyenv virtualenv-init -)"  # initialise the pyenv-virtualenv command
     fi
     typeset -U PATH
 

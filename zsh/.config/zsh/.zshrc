@@ -30,14 +30,6 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
 fi
 
 
-# === PYENV ===========================
-# Initialise Pyenv:
-if [[ -d "$HOME/.pyenv" ]]; then
-    eval "$(pyenv init -)"
-    eval "$(pyenv virtualenv-init -)"
-fi
-
-
 # === COLOURS =========================
 # Colours for BSD "ls" command
 export CLICOLOR=1
