@@ -5,7 +5,8 @@
 -- |_|_| |_|_|\__(_)_|\__,_|\__,_|
 --
 
------------------------------- General config ---------------------------------
+---------------------------------- General config -------------------------------------
+-- Global options
 vim.o.ruler = true
 vim.o.ignorecase = true
 vim.o.smartcase = true
@@ -16,7 +17,9 @@ vim.o.shiftwidth = 4
 vim.o.tabstop = 4
 vim.o.softtabstop = 4
 vim.o.smartindent = true
+vim.o.showmode = false -- Current mode already shown in Lightline
 
+-- Window options
 vim.wo.signcolumn = 'yes'
 vim.wo.number = true
 vim.wo.relativenumber = true
@@ -46,14 +49,15 @@ vim.diagnostic.config({
   severity_sort = true,
 })
 
-------------------------------- Neovim Python ---------------------------------
+----------------------------------- Neovim Python -------------------------------------
 PYTHON_PATH = vim.fn.stdpath('data') .. '/python-venv'
 vim.g.python3_host_prog = PYTHON_PATH .. '/bin/python'
 
----------------------------------- Plugins ------------------------------------
+-------------------------------------- Plugins ----------------------------------------
 -- Load plugins (packer)
 require('packer_init')
 
+-- Plugin configs
 require('plugins.colourscheme')
 require('plugins.lualine')
 require('plugins.nvim-tree')
@@ -68,11 +72,8 @@ require('plugins.alpha-nvim')
 require('plugins.which-key')
 require('plugins.neodim')
 
----------------------------------- Keymaps ------------------------------------
+-------------------------------------- Keymaps ----------------------------------------
 require('keymaps')
 
--- Hide current mode (already shown in Lightline)
-vim.o.showmode = false
-
--- Autocommands
+----------------------------------- Autocommands --------------------------------------
 require('autocommands')
