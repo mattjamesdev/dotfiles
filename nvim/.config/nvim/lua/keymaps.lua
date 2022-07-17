@@ -1,4 +1,5 @@
 local opts = { noremap = true, silent = true }
+local f = require('functions')
 
 -- Map leader key to space
 vim.keymap.set('n', '<Space>', '<nop>', opts)
@@ -25,6 +26,20 @@ vim.keymap.set('v', '{', '<esc>`>a}<esc>`<i{<esc>', opts)
 -- Reselect after indenting
 vim.keymap.set('v', '>', '>gv', opts)
 vim.keymap.set('v', '<', '<gv', opts)
+
+-- Smart dd
+vim.keymap.set('n', 'dd', f.smart_dd, {
+  desc = 'Delete line',
+  expr = true,
+  unpack(opts)
+})
+
+-- Smart visual d
+vim.keymap.set('v', 'd', f.smart_visual_d, {
+  desc = 'Delete',
+  expr = true,
+  unpack(opts)
+})
 
 -- Diagnostics
 vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float, {
