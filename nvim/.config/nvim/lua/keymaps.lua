@@ -58,3 +58,9 @@ vim.keymap.set('n', '<leader>fk', require('telescope.builtin').keymaps, {
   desc = 'Keymaps',
   unpack(opts)
 })
+
+-- ToggleTerm
+vim.keymap.set('n', '<leader>tt', ':ToggleTerm direction=float<CR>', {
+  desc = 'Float term',
+  unpack(opts)
+})
