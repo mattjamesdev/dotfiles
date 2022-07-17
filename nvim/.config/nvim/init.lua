@@ -35,11 +35,6 @@ vim.keymap.set('n', '<2-LeftMouse>', '<nop>', {})
 vim.keymap.set('i', '<2-LeftMouse>', '<nop>', {})
 vim.keymap.set('v', '<2-LeftMouse>', '<nop>', {})
 
--- Highlights
-vim.api.nvim_set_hl(0, 'LineNr', { ctermfg = 'grey' })
-vim.api.nvim_set_hl(0, 'ColorColumn', { ctermbg = 240 })
-vim.api.nvim_set_hl(0, 'CursorLineNR', { cterm = nil, ctermbg = 240 })
-
 -- Diagnostics
 vim.diagnostic.config({
   virtual_text = true,
