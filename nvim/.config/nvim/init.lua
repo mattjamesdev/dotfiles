@@ -66,6 +66,7 @@ require('plugins.efm-langserver')
 require('plugins.alpha-nvim')
 require('plugins.which-key')
 require('plugins.neodim')
+require('plugins.nvim-notify')
 
 -------------------------------------- Keymaps ----------------------------------------
 require('keymaps')
