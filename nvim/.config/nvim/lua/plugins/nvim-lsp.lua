@@ -91,7 +91,8 @@ cmp.setup.cmdline(':', {
     { name = 'path' }
   }, {
     { name = 'cmdline' }
-  })
+  }),
+  mapping = cmp.mapping.preset.cmdline({})
 })
 
 -------------------------------------------------------------------------------
