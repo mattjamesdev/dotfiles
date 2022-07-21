@@ -47,6 +47,20 @@ vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float, {
   unpack(opts) -- For Lua >5.2, use "table.unpack"
 })
 
+-- Buffers (including Bufferline)
+vim.keymap.set('n', '<leader>bd', ':bd<CR>', {
+  desc = 'Close buffer',
+  unpack(opts)
+})
+vim.keymap.set('n', '[b', ':BufferLineCyclePrev<CR>', {
+  desc = 'Previous BufferLine buffer',
+  unpack(opts)
+})
+vim.keymap.set('n', ']b', ':BufferLineCycleNext<CR>', {
+  desc = 'Next BufferLine buffer',
+  unpack(opts)
+})
+
 -- Wrapper function to pass arguments to a function used in a keymap
 -- https://www.reddit.com/r/neovim/comments/sjiwox/comment/hvf1r02/?utm_source=share&utm_medium=web2x&context=3
 local wrap = function(func, ...)
