@@ -14,6 +14,7 @@ local plugins = require('packer').startup(function(use)
   -- LSP
   use 'neovim/nvim-lspconfig' -- LSP config
   use 'williamboman/nvim-lsp-installer' -- Installer for language servers
+  use { 'glepnir/lspsaga.nvim', branch = 'main', } -- Prettier LSP stuff
 
   -- Completion
   use 'hrsh7th/cmp-nvim-lsp' -- Source for LSP
