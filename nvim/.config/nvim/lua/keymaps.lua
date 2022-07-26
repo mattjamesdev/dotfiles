@@ -46,6 +46,14 @@ vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float, {
   desc = 'Show float diagnostics',
   unpack(opts) -- For Lua >5.2, use "table.unpack"
 })
+vim.keymap.set('n', ']d', vim.diagnostic.goto_next, {
+  desc = 'Next diagnostic',
+  unpack(opts)
+})
+vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, {
+  desc = 'Previous diagnostic',
+  unpack(opts)
+})
 
 -- Buffers (including Bufferline)
 vim.keymap.set('n', '<leader>bd', ':bd<CR>', {
