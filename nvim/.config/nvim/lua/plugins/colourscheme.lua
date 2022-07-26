@@ -1,8 +1,8 @@
 -- Config for gruvbox
 require('gruvbox').setup({
-  overrides = {
-    Normal = { bg = "none" },
-  }
+  -- overrides = {
+  --   Normal = { bg = "none" },
+  -- }
 })
 
 -- Apply the colour scheme
