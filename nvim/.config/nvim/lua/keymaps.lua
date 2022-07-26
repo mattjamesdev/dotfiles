@@ -42,7 +42,7 @@ vim.keymap.set('v', 'd', f.smart_visual_d, {
 })
 
 -- Diagnostics
-vim.keymap.set('n', '<leader>e', require('lspsaga.diagnostic').show_line_diagnostics, {
+vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float, {
   desc = 'Show float diagnostics',
   unpack(opts) -- For Lua >5.2, use "table.unpack"
 })
