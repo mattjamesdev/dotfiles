@@ -1,5 +1,5 @@
 local opts = { noremap = true, silent = true }
-local f = require('functions')
+local f = require('mattjamesdev.functions')
 
 -- Map leader key to space
 vim.keymap.set('n', '<Space>', '<nop>', opts)
