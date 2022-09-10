@@ -16,5 +16,5 @@ vim.opt.background = 'dark'
 
 -- vim.cmd('colorscheme coal')
 -- vim.cmd('colorscheme gruvbox')
--- vim.cmd('colorscheme tundra')
+vim.cmd('colorscheme tundra')
 -- vim.cmd('colorscheme vscode')
