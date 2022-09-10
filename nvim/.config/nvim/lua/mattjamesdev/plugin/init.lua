@@ -1,6 +1,6 @@
 require('mattjamesdev.plugin.lsp')
-require('mattjamesdev.plugin.efm-langserver')
---require('mattjamesdev.plugin.null-ls')
+-- require('mattjamesdev.plugin.efm-langserver')
+require('mattjamesdev.plugin.null-ls')
 require('mattjamesdev.plugin.treesitter')
 require('mattjamesdev.plugin.telescope')
 require('mattjamesdev.plugin.lualine')

@@ -13,7 +13,11 @@ local plugins = require('packer').startup(function(use)
 
   -- LSP
   use 'neovim/nvim-lspconfig' -- LSP config
-  use 'williamboman/nvim-lsp-installer' -- Installer for language servers
+  use 'jose-elias-alvarez/null-ls.nvim'
+
+  -- Mason
+  use 'williamboman/mason.nvim'
+  use 'williamboman/mason-lspconfig.nvim'
 
   -- Completion
   use 'hrsh7th/cmp-nvim-lsp' -- Source for LSP
