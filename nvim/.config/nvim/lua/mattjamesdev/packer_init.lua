@@ -46,6 +46,8 @@ local plugins = require('packer').startup(function(use)
   -- Colourschemes
   use 'Mofiqul/vscode.nvim'
   use 'ellisonleao/gruvbox.nvim'
+  use 'sam4llis/nvim-tundra'
+  use 'cranberry-clockworks/coal.nvim'
 
   -- Misc
   use 'tpope/vim-commentary' -- Commenting
