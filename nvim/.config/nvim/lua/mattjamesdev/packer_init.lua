@@ -72,6 +72,12 @@ local plugins = require('packer').startup(function(use)
   use 'zbirenbaum/neodim' -- Dim text for unused variables, functions, etc.
   use 'rcarriga/nvim-notify' -- Notifications
   use 'andweeb/presence.nvim' -- Discord shows Neovim presence
+  use {
+    'lewis6991/gitsigns.nvim',
+    config = function()
+      require('gitsigns').setup()
+    end
+  }
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
