@@ -84,6 +84,12 @@ local plugins = require('packer').startup(function(use)
       require('fidget').setup()
     end
   }
+  use {
+    'norcalli/nvim-colorizer.lua',
+    config = function()
+      require('colorizer').setup()
+    end
+  }
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
