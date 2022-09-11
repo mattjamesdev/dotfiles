@@ -11,6 +11,8 @@ vim.opt.softtabstop = 4
 vim.opt.smartindent = true
 vim.opt.showmode = false -- Current mode already shown in Lightline
 vim.opt.termguicolors = true
+vim.opt.splitright = true
+vim.opt.splitbelow = true
 
 -- Window options
 vim.wo.signcolumn = 'yes'
