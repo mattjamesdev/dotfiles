@@ -78,6 +78,12 @@ local plugins = require('packer').startup(function(use)
       require('gitsigns').setup()
     end
   }
+  use {
+    'j-hui/fidget.nvim',
+    config = function()
+      require('fidget').setup()
+    end
+  }
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
