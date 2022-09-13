@@ -22,4 +22,10 @@ M.smart_visual_d = function()
   return "d"
 end
 
+-- Get the colour (hex value) of a highlight group's layer
+-- https://www.reddit.com/r/neovim/comments/oxddk9/how_do_i_get_the_value_from_a_highlight_group/
+M.get_hl_val = function(name, layer)
+  return vim.fn.synIDattr(vim.fn.synIDtrans(vim.fn.hlID(name)), layer .. "#")
+end
+
 return M
