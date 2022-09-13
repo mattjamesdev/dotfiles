@@ -17,7 +17,7 @@ vim.keymap.set('v', 'J', ":m '>+1<CR>gv=gv", opts)
 vim.keymap.set('v', 'K', ":m '<-2<CR>gv=gv", opts)
 
 -- Add quotes/brackets around visual selection
-vim.keymap.set('v', '"', '<esc>`>a"<esc>`<i"<esc>', opts)
+vim.keymap.set('v', 'Q', '<esc>`>a"<esc>`<i"<esc>', opts)
 vim.keymap.set('v', "'", "<esc>`>a'<esc>`<i'<esc>", opts)
 vim.keymap.set('v', '(', '<esc>`>a)<esc>`<i(<esc>', opts)
 vim.keymap.set('v', '[', '<esc>`>a]<esc>`<i[<esc>', opts)
