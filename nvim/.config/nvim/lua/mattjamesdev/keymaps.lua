@@ -97,7 +97,11 @@ vim.keymap.set('n', '<leader>fk', require('telescope.builtin').keymaps, {
 })
 
 -- ToggleTerm
-vim.keymap.set('n', '<leader>tt', ':ToggleTerm direction=float<CR>', {
+vim.keymap.set('n', '<leader>tt', ':ToggleTerm direction=horizontal<CR>', {
+  desc = 'Horizontal term',
+  unpack(opts)
+})
+vim.keymap.set('n', '<leader>tf', ':ToggleTerm direction=float<CR>', {
   desc = 'Float term',
   unpack(opts)
 })
