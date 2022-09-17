@@ -12,6 +12,7 @@ require('telescope').setup({
     },
     sorting_strategy = "ascending",
     prompt_prefix = "   ",
-    selection_caret = "  "
+    selection_caret = "  ",
+    borderchars = { " ", " ", " ", " ", " ", " ", " ", " " },
   }
 })

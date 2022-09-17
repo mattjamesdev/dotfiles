@@ -19,5 +19,8 @@ require('mattjamesdev.plugin') -- Plugin configs
 -- Keymaps
 require('mattjamesdev.keymaps')
 
+-- Highlights
+require('mattjamesdev.highlights')
+
 -- Autocommands
 require('mattjamesdev.autocommands')
