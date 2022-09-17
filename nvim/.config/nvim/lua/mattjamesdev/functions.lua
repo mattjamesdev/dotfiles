@@ -28,4 +28,12 @@ M.get_hl_val = function(name, layer)
   return vim.fn.synIDattr(vim.fn.synIDtrans(vim.fn.hlID(name)), layer .. "#")
 end
 
+-- Apply a table of highlights, as defined in lua/mattjamesdev/highlights
+-- Inspired by NvChad's base46 theme (https://github.com/NvChad/base46/tree/master/lua/base46/integrations)
+M.load_highlight = function(group)
+  for hl, col in pairs(group) do
+    vim.api.nvim_set_hl(0, hl, col)
+  end
+end
+
 return M
