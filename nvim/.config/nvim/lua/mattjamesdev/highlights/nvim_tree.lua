@@ -1,0 +1,5 @@
+return {
+  NvimTreeWinSeparator = {
+    link = "WinSeparator",
+  },
+}
