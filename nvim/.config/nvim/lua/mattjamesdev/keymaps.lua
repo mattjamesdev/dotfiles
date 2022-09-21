@@ -27,6 +27,9 @@ vim.keymap.set('v', '{', '<esc>`>a}<esc>`<i{<esc>', opts)
 vim.keymap.set('v', '>', '>gv', opts)
 vim.keymap.set('v', '<', '<gv', opts)
 
+-- Yank to clipboard with <leader>y
+vim.keymap.set({'n', 'v'}, '<leader>y', '"+y', opts)
+
 -- Smart dd
 vim.keymap.set('n', 'dd', f.smart_dd, {
   desc = 'Delete line',
