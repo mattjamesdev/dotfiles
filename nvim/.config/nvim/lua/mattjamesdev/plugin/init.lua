@@ -1,4 +1,5 @@
 require('mattjamesdev.plugin.lsp')
+require('mattjamesdev.plugin.luasnip')
 -- require('mattjamesdev.plugin.efm-langserver')
 require('mattjamesdev.plugin.null-ls')
 require('mattjamesdev.plugin.treesitter')

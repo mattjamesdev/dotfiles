@@ -24,13 +24,15 @@ local plugins = require('packer').startup(function(use)
   use 'hrsh7th/cmp-buffer'   -- Source for buffer
   use 'hrsh7th/cmp-path'     -- Source for paths
   use 'hrsh7th/cmp-cmdline'  -- Source for commands
+  -- use {'L3MON4D3/LuaSnip', opt = false}
+  -- use {'saadparwaiz1/cmp_luasnip', opt = false}
   use {
     'hrsh7th/nvim-cmp', -- The main completion plugin
     requires = {
-      { 'hrsh7th/cmp-vsnip', opt = false }, -- Snippets for completion
-      { 'hrsh7th/vim-vsnip', opt = false }, -- Snippets engine
-      -- {'L3MON4D3/LuaSnip', opt = false},
-      -- {'saadparwaiz1/cmp_luasnip', opt = false},
+      -- { 'hrsh7th/cmp-vsnip', opt = false }, -- Snippets for completion
+      -- { 'hrsh7th/vim-vsnip', opt = false }, -- Snippets engine
+      {'L3MON4D3/LuaSnip', opt = false},
+      {'saadparwaiz1/cmp_luasnip', opt = false},
     }
   }
   use 'hrsh7th/cmp-nvim-lsp-signature-help' -- Source for LSP signature help

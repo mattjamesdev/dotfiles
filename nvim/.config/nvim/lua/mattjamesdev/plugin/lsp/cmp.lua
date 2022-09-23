@@ -4,13 +4,14 @@ vim.o.completeopt = 'menu,menuone,noselect'
 -- Setup nvim-cmp.
 local cmp = require('cmp')
 local lspkind = require('lspkind')
+local luasnip = require('luasnip')
 
 cmp.setup({
   snippet = {
     -- REQUIRED - you must specify a snippet engine
     expand = function(args)
-      vim.fn["vsnip#anonymous"](args.body) -- For `vsnip` users.
-      -- require('luasnip').lsp_expand(args.body) -- For `LuaSnip` users.
+      -- vim.fn["vsnip#anonymous"](args.body) -- For `vsnip` users.
+      luasnip.lsp_expand(args.body) -- For `LuaSnip` users.
     end,
   },
   mapping = cmp.mapping.preset.insert({
@@ -22,6 +23,8 @@ cmp.setup({
     ['<Tab>'] = function(fallback) -- Super tab
       if cmp.visible() then
         cmp.select_next_item()
+      elseif luasnip.expand_or_jumpable() then
+        luasnip.expand_or_jump()
       else
         fallback()
       end
@@ -29,6 +32,8 @@ cmp.setup({
     ['<S-Tab>'] = function(fallback)
       if cmp.visible() then
         cmp.select_prev_item()
+      elseif luasnip.jumpable(-1) then
+        luasnip.jump(-1)
       else
         fallback()
       end
@@ -36,7 +41,8 @@ cmp.setup({
   }),
   sources = cmp.config.sources({
     { name = 'nvim_lsp' },
-    { name = 'vsnip' }, -- For vsnip users.
+    -- { name = 'vsnip' }, -- For vsnip users.
+    { name = 'luasnip' }, -- For luasnip users.
     { name = 'nvim_lsp_signature_help' }, -- Function signatures
     { name = 'nvim_lua' },
   }, {
