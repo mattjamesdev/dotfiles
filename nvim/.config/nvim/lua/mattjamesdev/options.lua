@@ -2,7 +2,7 @@
 vim.opt.ruler = true
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
-vim.opt.scrolloff = 99
+vim.opt.scrolloff = 10
 vim.opt.laststatus = 3
 vim.opt.expandtab = true
 vim.opt.shiftwidth = 4
@@ -35,6 +35,6 @@ vim.diagnostic.config({
   virtual_text = true,
   signs = true,
   underline = true,
-  update_in_insert = true,
+  update_in_insert = false,
   severity_sort = true,
 })
