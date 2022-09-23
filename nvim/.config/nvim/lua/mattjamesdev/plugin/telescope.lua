@@ -6,6 +6,7 @@ require('telescope').setup({
       ".DS_Store",
       ".venv",
       "venv",
+      ".git",
     },
     layout_config = {
       prompt_position = "top",
