@@ -6,7 +6,7 @@
 ### macOS ###
 if [[ `uname` == "Darwin" ]]; then
     # POETRY_HOME (for the Python package manager Poetry)
-    export POETRY_HOME="~/.pypoetry"
+    export POETRY_HOME="$HOME/.pypoetry"
 
     # PATH
     #eval "${/usr/libexec/path_helper -s}"  # Set default PATH
