@@ -40,6 +40,11 @@ export LSCOLORS='ExFxCxDxBxEgEdabagacad'
 export LS_COLORS='di=1;34:ln=1;35:so=1;32:pi=1;33:ex=1;31:bd=1;34;46:cd=1;34;43:su=30;41:sg=30;46:tw=30;42:ow=30;43:.DS_Store=38;5;244'
 
 
+# === .zfunc path =====================
+# Mostly just for poetry
+fpath+=${ZDOTDIR}/.zfunc
+
+
 # === AUTO/TAB COMPLETE ===============
 # Taken from https://www.youtube.com/watch?v=hLxr9hLfO0Q at 3:32.
 autoload -Uz compinit
