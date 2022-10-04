@@ -9,6 +9,9 @@ require('gruvbox').setup({
 -- Tundra
 require('nvim-tundra').setup({
   transparent_background = false,
+  plugins = {
+    telescope = true,
+  }
 })
 
 -- Apply the colour scheme
