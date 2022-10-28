@@ -6,6 +6,7 @@ require('null-ls').setup({
     -- require("null-ls").builtins.diagnostics.eslint,
     -- require("null-ls").builtins.completion.spell,
     require('null-ls').builtins.formatting.black,
+    require('null-ls').builtins.formatting.prettier,
   },
   -- Enable format on save
   -- on_attach = function(client, bufnr)
