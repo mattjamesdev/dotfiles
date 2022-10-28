@@ -13,6 +13,7 @@ vim.opt.showmode = false -- Current mode already shown in Lightline
 vim.opt.termguicolors = true
 vim.opt.splitright = true
 vim.opt.splitbelow = true
+vim.opt.pumheight = 15
 
 -- Window options
 vim.wo.signcolumn = 'yes'
