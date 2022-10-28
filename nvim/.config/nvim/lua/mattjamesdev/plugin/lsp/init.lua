@@ -56,3 +56,13 @@ require('lspconfig').tsserver.setup {
   end,
   root_dir = function() return vim.loop.cwd() end,
 }
+
+require('lspconfig').cssls.setup({
+  capabilities = capabilities,
+  on_attach = on_attach,
+})
+
+require('lspconfig').emmet_ls.setup({
+  capabilities = capabilities,
+  on_attach = on_attach,
+})
