@@ -49,6 +49,10 @@ require('lspconfig').sumneko_lua.setup {
 
 require('lspconfig').tsserver.setup {
   capabilities = capabilities,
-  on_attach = on_attach,
+  on_attach = function(client, bufnr)
+    on_attach(client, bufnr)
+    client.resolved_capabilities.document_formatting = false
+    client.resolved_capabilities.document_range_formatting = false
+  end,
   root_dir = function() return vim.loop.cwd() end,
 }
