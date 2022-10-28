@@ -10,7 +10,10 @@ require 'nvim-treesitter.configs'.setup {
     "regex",
     "json",
     "javascript",
-    "html"
+    "html",
+    "css",
+    "typescript",
+    "tsx",
   },
 
   -- Syntax highlighting
