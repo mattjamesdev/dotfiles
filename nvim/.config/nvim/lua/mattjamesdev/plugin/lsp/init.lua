@@ -26,7 +26,7 @@ local on_attach = function(client, bufnr)
     desc = 'Code actions', unpack(bufopts)
   })
   vim.keymap.set('n', 'gr', vim.lsp.buf.references, bufopts)
-  vim.keymap.set('n', '<space>lf', vim.lsp.buf.formatting, {
+  vim.keymap.set('n', '<space>lf', vim.lsp.buf.format, {
     desc = 'Format file',
     unpack(bufopts)
   })
@@ -51,8 +51,8 @@ require('lspconfig').tsserver.setup {
   capabilities = capabilities,
   on_attach = function(client, bufnr)
     on_attach(client, bufnr)
-    client.resolved_capabilities.document_formatting = false
-    client.resolved_capabilities.document_range_formatting = false
+    client.server_capabilities.document_formatting = false
+    client.server_capabilities.document_range_formatting = false
   end,
   root_dir = function() return vim.loop.cwd() end,
 }
