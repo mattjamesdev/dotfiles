@@ -1,3 +1,7 @@
+-- My functions
+local f = require("mattjamesdev.functions")
+
+
 -- Autocommands
 local augroup = vim.api.nvim_create_augroup
 local autocmd = vim.api.nvim_create_autocmd
@@ -41,4 +45,27 @@ autocmd('TextYankPost', {
       timeout = 40,
     })
   end,
+})
+
+
+-- Disable winbar in certain window types (startup screen, NvimTree, etc.)
+-- https://www.youtube.com/watch?v=Rl7Tg3A0rAE
+autocmd({"VimEnter", "BufWinEnter", "BufFilePost"}, {
+  callback = function()
+    local winbar_filetype_exclude = {
+      "help",
+      "NvimTree",
+      "packer",
+      "alpha",
+    }
+
+    if vim.tbl_contains(winbar_filetype_exclude, vim.bo.filetype) then
+      vim.opt_local.winbar = nil
+      return
+    end
+
+    local value = f.create_winbar()
+
+    vim.opt_local.winbar = value
+  end
 })

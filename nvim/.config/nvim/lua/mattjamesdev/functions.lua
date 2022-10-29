@@ -36,4 +36,26 @@ M.load_highlight = function(group)
   end
 end
 
+-- Get nvim-web-devicons if they are present
+local devicons_present, devicons = pcall(require, "nvim-web-devicons")
+
+-- Create the winbar display
+-- https://www.youtube.com/watch?v=Rl7Tg3A0rAE
+M.create_winbar = function ()
+  -- Get the file name and extension
+  local filename = vim.fn.expand("%:t")
+  local extension = vim.fn.expand("%:e")
+  -- Check to see if the file actually has an extension
+  local default = extension == ""
+  -- If we have nvim-web-devicons, use them to pretty up the winbar
+  if devicons_present then
+    local file_icon, file_colour = devicons.get_icon_color(filename, extension, {default = default})
+    local hl_group = "FileIconColor" .. extension
+    vim.api.nvim_set_hl(0, hl_group, { fg = file_colour })
+    return " " .. "%#" .. hl_group .. "#" .. file_icon .. "%* " .. "%#LineNr#" .. filename .. "%* "
+  else
+    return " %#LineNr#" .. filename "#* "
+  end
+end
+
 return M
