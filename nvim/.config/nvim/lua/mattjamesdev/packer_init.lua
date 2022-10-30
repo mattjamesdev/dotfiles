@@ -92,6 +92,12 @@ local plugins = require('packer').startup(function(use)
       require('colorizer').setup()
     end
   }
+  use {
+    'uga-rosa/ccc.nvim',
+    config = function()
+      require('ccc').setup()
+    end
+  }
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins

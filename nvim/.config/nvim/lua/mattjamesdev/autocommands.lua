@@ -57,6 +57,7 @@ autocmd({"VimEnter", "BufWinEnter", "BufFilePost"}, {
       "NvimTree",
       "packer",
       "alpha",
+      "ccc-ui",
       "", -- Some floating windows have and empty string as their "filetype"
     }
 

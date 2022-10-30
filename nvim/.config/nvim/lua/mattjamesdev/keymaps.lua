@@ -108,3 +108,9 @@ vim.keymap.set('n', '<leader>tf', ':ToggleTerm direction=float<CR>', {
   desc = 'Float term',
   unpack(opts)
 })
+
+-- ccc
+vim.keymap.set('n', '<leader>cc', ':CccPick<CR>', {
+  desc = 'Pick colour',
+  unpack(opts)
+})
