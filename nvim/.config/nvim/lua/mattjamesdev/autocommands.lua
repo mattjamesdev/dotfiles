@@ -57,15 +57,15 @@ autocmd({"VimEnter", "BufWinEnter", "BufFilePost"}, {
       "NvimTree",
       "packer",
       "alpha",
+      "", -- Some floating windows have and empty string as their "filetype"
     }
 
     if vim.tbl_contains(winbar_filetype_exclude, vim.bo.filetype) then
       vim.opt_local.winbar = nil
-      return
+    elseif vim.bo.filetype == "qf" then
+      vim.opt_local.winbar = " Quickfix menu"
+    else
+      vim.opt_local.winbar = f.create_winbar()
     end
-
-    local value = f.create_winbar()
-
-    vim.opt_local.winbar = value
   end
 })
