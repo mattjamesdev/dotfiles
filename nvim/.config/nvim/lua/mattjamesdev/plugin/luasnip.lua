@@ -18,3 +18,10 @@ luasnip.add_snippets("lua", {
 luasnip.add_snippets("python", {
   luasnip.parser.parse_snippet("ifmain", 'if __name__ == "__main__":')
 })
+
+local css_system_fonts = [[body {
+  font-family: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}]]
+luasnip.add_snippets("css", {
+  luasnip.parser.parse_snippet("sysfonts", css_system_fonts)
+})
