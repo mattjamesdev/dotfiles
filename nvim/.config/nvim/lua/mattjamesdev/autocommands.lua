@@ -58,6 +58,8 @@ autocmd({"VimEnter", "BufWinEnter", "BufFilePost"}, {
       "packer",
       "alpha",
       "ccc-ui",
+      "toggleterm",
+      "gitcommit",
       "", -- Some floating windows have and empty string as their "filetype"
     }
 
