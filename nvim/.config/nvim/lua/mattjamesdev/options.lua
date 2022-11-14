@@ -2,7 +2,7 @@
 vim.opt.ruler = true
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
-vim.opt.scrolloff = 10
+vim.opt.scrolloff = 9
 vim.opt.laststatus = 3
 vim.opt.expandtab = true
 vim.opt.shiftwidth = 4
