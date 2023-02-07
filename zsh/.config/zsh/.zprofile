@@ -11,7 +11,8 @@ if [[ `uname` == "Darwin" ]]; then
     # PATH
     #eval "${/usr/libexec/path_helper -s}"  # Set default PATH
     export PATH="$PATH:$HOME/opt/anaconda3/bin"          # Anaconda
-    export PATH="$PATH:/opt/local/bin:/opt/local/sbin"   # Macports
+    #export PATH="$PATH:/opt/local/bin:/opt/local/sbin"   # Macports
+    eval "$(/opt/homebrew/bin/brew shellenv)"            # Homebrew
     export PATH="$PATH:$HOME/bin/matt"                   # personal stuff
     export PATH="/Applications/Lilypond/LilyPond:$PATH"  # LilyPond
     export PATH="$POETRY_HOME/bin:$PATH"  # Poetry
