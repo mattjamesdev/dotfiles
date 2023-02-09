@@ -8,9 +8,9 @@
 -- General config
 require('mattjamesdev.options')
 
------------------------------------ Neovim Python -------------------------------------
-PYTHON_PATH = vim.fn.stdpath('data') .. '/python-venv'
-vim.g.python3_host_prog = PYTHON_PATH .. '/bin/python'
+-- Neovim Python
+--PYTHON_PATH = vim.fn.stdpath('data') .. '/python-venv'
+--vim.g.python3_host_prog = PYTHON_PATH .. '/bin/python'
 
 -- Plugins
 require('mattjamesdev.packer_init') -- Packer
