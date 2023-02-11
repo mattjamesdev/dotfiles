@@ -10,7 +10,7 @@ if [[ `uname` == "Darwin" ]]; then
 
     # PATH
     #eval "${/usr/libexec/path_helper -s}"  # Set default PATH
-    export PATH="$PATH:$HOME/opt/anaconda3/bin"          # Anaconda
+    export PATH="$PATH:$HOME/mambaforge/bin"             # Mambaforge (conda)
     #export PATH="$PATH:/opt/local/bin:/opt/local/sbin"   # Macports
     eval "$(/opt/homebrew/bin/brew shellenv)"            # Homebrew
     export PATH="$PATH:$HOME/bin/matt"                   # personal stuff

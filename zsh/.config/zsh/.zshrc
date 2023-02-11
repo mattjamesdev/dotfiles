@@ -91,17 +91,21 @@ export PROMPT='%F{046}%n@%m %*%f in %F{135}%~%f ${vcs_info_msg_0_}
 # !! Contents within this block are managed by 'conda init' !!
 if [[ `uname` == "Darwin" ]]; then
     # macOS
-    __conda_setup="$('/Users/matthewjames/opt/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+    __conda_setup="$('/Users/matthewjames/mambaforge/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
     if [ $? -eq 0 ]; then
         eval "$__conda_setup"
     else
-        if [ -f "/Users/matthewjames/opt/anaconda3/etc/profile.d/conda.sh" ]; then
-            . "/Users/matthewjames/opt/anaconda3/etc/profile.d/conda.sh"
+        if [ -f "/Users/matthewjames/mambaforge/etc/profile.d/conda.sh" ]; then
+            . "/Users/matthewjames/mambaforge/etc/profile.d/conda.sh"
         else
-            export PATH="/Users/matthewjames/opt/anaconda3/bin:$PATH"
+            export PATH="/Users/matthewjames/mambaforge/bin:$PATH"
         fi
     fi
     unset __conda_setup
+
+    if [ -f "/Users/matthewjames/mambaforge/etc/profile.d/mamba.sh" ]; then
+        . "/Users/matthewjames/mambaforge/etc/profile.d/mamba.sh"
+    fi
 elif command -v pacman > /dev/null; then
     # Arch Linux
     __conda_setup="$('/home/matt/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
