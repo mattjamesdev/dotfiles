@@ -56,7 +56,7 @@ local plugins = require('lazy').setup({
   'cranberry-clockworks/coal.nvim',
 
   -- Misc
-  'tpope/vim-commentary', -- Commenting
+  { 'numToStr/Comment.nvim', config = true },
   'windwp/nvim-autopairs', -- Automatic bracket and quote pairs
   {
     'goolord/alpha-nvim', -- Startup screen
