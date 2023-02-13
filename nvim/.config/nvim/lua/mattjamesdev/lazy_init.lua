@@ -20,21 +20,17 @@ local plugins = require('lazy').setup({
   'jose-elias-alvarez/null-ls.nvim',
 
   -- Mason
-  'williamboman/mason.nvim',
-  'williamboman/mason-lspconfig.nvim',
+  { 'williamboman/mason.nvim', config = true },
+  { 'williamboman/mason-lspconfig.nvim', config = true },
 
   -- Completion
   'hrsh7th/cmp-nvim-lsp', -- Source for LSP
   'hrsh7th/cmp-buffer',   -- Source for buffer
   'hrsh7th/cmp-path',     -- Source for paths
   'hrsh7th/cmp-cmdline',  -- Source for commands
-  -- use {'L3MON4D3/LuaSnip', opt = false}
-  -- use {'saadparwaiz1/cmp_luasnip', opt = false}
   {
     'hrsh7th/nvim-cmp', -- The main completion plugin
     dependencies = {
-      -- { 'hrsh7th/cmp-vsnip', opt = false }, -- Snippets for completion
-      -- { 'hrsh7th/vim-vsnip', opt = false }, -- Snippets engine
       {'L3MON4D3/LuaSnip', opt = false},
       {'saadparwaiz1/cmp_luasnip', opt = false},
     }
@@ -56,7 +52,7 @@ local plugins = require('lazy').setup({
   -- Colourschemes
   'Mofiqul/vscode.nvim',
   'ellisonleao/gruvbox.nvim',
-  { 'sam4llis/nvim-tundra', branch = "dev" },
+  'sam4llis/nvim-tundra',
   'cranberry-clockworks/coal.nvim',
 
   -- Misc
@@ -71,37 +67,17 @@ local plugins = require('lazy').setup({
   'kyazdani42/nvim-tree.lua', -- File tree
   'akinsho/bufferline.nvim', -- Buffer line
   'nvim-lualine/lualine.nvim', -- Status line
-  'akinsho/toggleterm.nvim', -- Better terminal in Neovim
+  { 'akinsho/toggleterm.nvim', config = true }, -- Better terminal in Neovim
   'onsails/lspkind-nvim', -- VSCode-like pictograms for completion
   'lukas-reineke/indent-blankline.nvim', -- Show indentation lines
   'folke/which-key.nvim', -- Keymap hints
   'zbirenbaum/neodim', -- Dim text for unused variables, functions, etc.
   'rcarriga/nvim-notify', -- Notifications
-  'andweeb/presence.nvim', -- Discord shows Neovim presence
-  {
-    'lewis6991/gitsigns.nvim',
-    config = function()
-      require('gitsigns').setup()
-    end
-  },
-  {
-    'j-hui/fidget.nvim',
-    config = function()
-      require('fidget').setup()
-    end
-  },
-  {
-    'norcalli/nvim-colorizer.lua',
-    config = function()
-      require('colorizer').setup()
-    end
-  },
-  {
-    'uga-rosa/ccc.nvim',
-    config = function()
-      require('ccc').setup()
-    end
-  },
+  'andweeb/presence.nvim', -- Discord presence
+  { 'lewis6991/gitsigns.nvim', config = true },
+  { 'j-hui/fidget.nvim', config = true },
+  { 'norcalli/nvim-colorizer.lua', config = true },
+  { 'uga-rosa/ccc.nvim', config = true },
 
 })
 

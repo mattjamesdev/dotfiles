@@ -1,5 +1,5 @@
 require('mattjamesdev.plugins.lsp.cmp')
-require('mattjamesdev.plugins.lsp.mason')
+-- require('mattjamesdev.plugins.lsp.mason')
 
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
 

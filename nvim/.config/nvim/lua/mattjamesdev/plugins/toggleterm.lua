@@ -1,9 +1,7 @@
-require('toggleterm').setup({})
-
 -- Function to set keymaps for the terminal
 function _G.set_terminal_keymaps()
   local opts = { buffer = 0 }
-  -- vim.keymap.set('t', '<esc>', [[<C-\><C-n>]], opts)
+  -- Default way to exit terminal is <C-\><C-n>
   vim.keymap.set('t', '<C-n>', function() vim.cmd([[:q]]) end, opts)
   vim.keymap.set('t', '<C-k>', [[<Cmd>wincmd k<CR>]], opts)
 end

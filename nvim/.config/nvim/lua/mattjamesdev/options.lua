@@ -41,7 +41,6 @@ vim.diagnostic.config({
 })
 
 -- Leader key (must be set before lazy.nvim config)
-local opts = { noremap = true, silent = true }
-vim.keymap.set('n', '<Space>', '<nop>', opts)
+vim.keymap.set('n', '<Space>', '<nop>', { noremap = true, silent = true })
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
