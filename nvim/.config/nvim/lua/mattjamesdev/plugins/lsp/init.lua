@@ -1,5 +1,5 @@
-require('mattjamesdev.plugin.lsp.cmp')
-require('mattjamesdev.plugin.lsp.mason')
+require('mattjamesdev.plugins.lsp.cmp')
+require('mattjamesdev.plugins.lsp.mason')
 
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
@@ -37,7 +37,7 @@ require('lspconfig').pyright.setup {
   on_attach = on_attach,
 }
 
-require('lspconfig').sumneko_lua.setup {
+require('lspconfig').lua_ls.setup {
   capabilities = capabilities,
   on_attach = on_attach,
   settings = {

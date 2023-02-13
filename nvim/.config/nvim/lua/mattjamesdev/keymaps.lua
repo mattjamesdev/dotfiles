@@ -1,10 +1,6 @@
 local opts = { noremap = true, silent = true }
 local f = require('mattjamesdev.functions')
 
--- Map leader key to space
-vim.keymap.set('n', '<Space>', '<nop>', opts)
-vim.g.mapleader = ' '
-
 -- Better window movement
 vim.keymap.set('n', '<C-h>', '<C-w>h', opts)
 vim.keymap.set('n', '<C-j>', '<C-w>j', opts)

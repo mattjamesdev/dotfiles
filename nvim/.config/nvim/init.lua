@@ -13,8 +13,8 @@ require('mattjamesdev.options')
 --vim.g.python3_host_prog = PYTHON_PATH .. '/bin/python'
 
 -- Plugins
-require('mattjamesdev.packer_init') -- Packer
-require('mattjamesdev.plugin') -- Plugin configs
+require('mattjamesdev.lazy_init') -- Lazy.nvim
+require('mattjamesdev.plugins') -- Plugin configs
 
 -- Keymaps
 require('mattjamesdev.keymaps')

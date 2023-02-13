@@ -39,3 +39,9 @@ vim.diagnostic.config({
   update_in_insert = false,
   severity_sort = true,
 })
+
+-- Leader key (must be set before lazy.nvim config)
+local opts = { noremap = true, silent = true }
+vim.keymap.set('n', '<Space>', '<nop>', opts)
+vim.g.mapleader = ' '
+vim.g.maplocalleader = ' '

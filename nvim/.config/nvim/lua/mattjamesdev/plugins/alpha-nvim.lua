@@ -6,7 +6,7 @@ local function footer()
   -- local plugins = #vim.tbl_keys(packer_plugins)
   local v = vim.version()
   local plugins_count = vim.fn.len(
-    vim.fn.globpath('~/.local/share/nvim/site/pack/packer/start', '*', 0, 1)
+    vim.fn.globpath('~/.local/share/nvim/lazy', '*', 0, 1)
   )
   return string.format('Neovim v%d.%d.%d | Loaded %d plugins', v.major, v.minor, v.patch, plugins_count)
 end
