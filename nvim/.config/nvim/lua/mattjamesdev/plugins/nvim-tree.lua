@@ -1,16 +1,22 @@
-require('nvim-tree').setup({
-  -- auto_close = true,
-  hijack_cursor = true,
-  view = {
-    width = 40,
+return {
+  'kyazdani42/nvim-tree.lua',
+  dependencies = {
+    'kyazdani42/nvim-web-devicons'
   },
-  renderer = {
-    highlight_git = true,
-    indent_markers = {
-      enable = true,
+  cmd = { 'NvimTreeOpen', 'NvimTreeToggle' },
+  opts = {
+    hijack_cursor = true,
+    view = {
+      width = 40,
     },
-    icons = {
-      git_placement = "after",
+    renderer = {
+      highlight_git = true,
+      indent_markers = {
+        enable = true,
+      },
+      icons = {
+        git_placement = "after",
+      }
     }
   }
-})
+}

@@ -1,15 +1,13 @@
-require('mattjamesdev.plugins.lsp')
-require('mattjamesdev.plugins.luasnip')
-require('mattjamesdev.plugins.null-ls')
-require('mattjamesdev.plugins.treesitter')
-require('mattjamesdev.plugins.telescope')
-require('mattjamesdev.plugins.lualine')
-require('mattjamesdev.plugins.nvim-tree')
-require('mattjamesdev.plugins.nvim-autopairs')
-require('mattjamesdev.plugins.toggleterm')
-require('mattjamesdev.plugins.bufferline')
-require('mattjamesdev.plugins.alpha-nvim')
-require('mattjamesdev.plugins.which-key')
-require('mattjamesdev.plugins.neodim')
-require('mattjamesdev.plugins.nvim-notify')
-require('mattjamesdev.plugins.colourscheme')
+return {
+  -- Misc
+  {
+    'numToStr/Comment.nvim',
+    event = 'VeryLazy',
+    config = true
+  },
+  'lukas-reineke/indent-blankline.nvim', -- Show indentation lines
+  'andweeb/presence.nvim', -- Discord presence
+  { 'lewis6991/gitsigns.nvim', config = true },
+  { 'j-hui/fidget.nvim', event = 'VeryLazy', config = true },
+  { 'norcalli/nvim-colorizer.lua', event = 'VeryLazy', config = true },
+}

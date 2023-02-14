@@ -77,36 +77,12 @@ local wrap = function(func, ...)
   end
 end
 
--- Telescope
-vim.keymap.set('n', '<leader>ff', wrap(require('telescope.builtin').find_files, { hidden = true }), {
-  desc = 'Find files',
-  unpack(opts)
-})
-vim.keymap.set('n', '<leader>fb', require('telescope.builtin').buffers, {
-  desc = 'Find buffers',
-  unpack(opts)
-})
-vim.keymap.set('n', '<leader>fg', require('telescope.builtin').live_grep, {
-  desc = 'Live grep',
-  unpack(opts)
-})
-vim.keymap.set('n', '<leader>fk', require('telescope.builtin').keymaps, {
-  desc = 'Keymaps',
-  unpack(opts)
-})
-
--- ToggleTerm
-vim.keymap.set('n', '<leader>tt', ':ToggleTerm direction=horizontal<CR>', {
-  desc = 'Horizontal term',
-  unpack(opts)
-})
-vim.keymap.set('n', '<leader>tf', ':ToggleTerm direction=float<CR>', {
-  desc = 'Float term',
-  unpack(opts)
-})
-
--- ccc
-vim.keymap.set('n', '<leader>cc', ':CccPick<CR>', {
-  desc = 'Pick colour',
-  unpack(opts)
-})
+-- -- ToggleTerm
+-- vim.keymap.set('n', '<leader>tt', ':ToggleTerm direction=horizontal<CR>', {
+--   desc = 'Horizontal term',
+--   unpack(opts)
+-- })
+-- vim.keymap.set('n', '<leader>tf', ':ToggleTerm direction=float<CR>', {
+--   desc = 'Float term',
+--   unpack(opts)
+-- })

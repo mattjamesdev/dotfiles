@@ -1,5 +1,6 @@
--- Configuration for Treesitter
-require 'nvim-treesitter.configs'.setup {
+return {
+  'nvim-treesitter/nvim-treesitter',
+  build = ':TSUpdate',
   ensure_installed = {
     "python",
     "r",

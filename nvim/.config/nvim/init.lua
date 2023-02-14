@@ -10,7 +10,6 @@ require('mattjamesdev.options')
 
 -- Plugins
 require('mattjamesdev.lazy_init') -- Lazy.nvim
-require('mattjamesdev.plugins') -- Plugin configs
 
 -- Keymaps
 require('mattjamesdev.keymaps')
@@ -20,3 +19,7 @@ require('mattjamesdev.highlights')
 
 -- Autocommands
 require('mattjamesdev.autocommands')
+
+-- Colourscheme
+vim.opt.background = 'dark'
+vim.cmd.colorscheme('tundra')

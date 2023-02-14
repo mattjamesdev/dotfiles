@@ -1,67 +1,69 @@
-require('mattjamesdev.plugins.lsp.cmp')
+return {
+  -- lspconfig
+  {
+    'neovim/nvim-lspconfig',
+    event = { 'BufReadPre', 'BufNewFile' },
+    dependencies = {
+      'mason.nvim',
+      'mason-lspconfig.nvim'
+    },
+    config = require('mattjamesdev.plugins.lsp.server_config').server_setup
+  },
 
-local capabilities = require('cmp_nvim_lsp').default_capabilities()
+  -- null-ls
+  {
+    'jose-elias-alvarez/null-ls.nvim',
+    event = { 'BufReadPre', 'BufNewFile' },
+    dependencies = { 'mason.nvim' },
+    opts = function()
+      local nls = require('null-ls')
+      return {
+        sources = {
+          nls.builtins.formatting.stylua,
+          nls.builtins.formatting.black,
+          nls.builtins.formatting.prettier,
+        }
+      }
+    end
+  },
 
-local on_attach = function(client, bufnr)
-  -- Mappings.
-  -- See `:help vim.lsp.*` for documentation on any of the below functions
-  local bufopts = { noremap = true, silent = true, buffer = bufnr }
-  vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, bufopts)
-  vim.keymap.set('n', 'gd', vim.lsp.buf.definition, {
-    desc = 'Go to definition',
-    unpack(bufopts)
-  })
-  vim.keymap.set('n', 'K', vim.lsp.buf.hover, bufopts)
-  vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, bufopts)
-  vim.keymap.set('n', '<space>k', vim.lsp.buf.signature_help, bufopts)
-  vim.keymap.set('n', '<space>wa', vim.lsp.buf.add_workspace_folder, bufopts)
-  vim.keymap.set('n', '<space>wr', vim.lsp.buf.remove_workspace_folder, bufopts)
-  vim.keymap.set('n', '<space>wl', function()
-    print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
-  end, bufopts)
-  vim.keymap.set('n', '<space>D', vim.lsp.buf.type_definition, bufopts)
-  vim.keymap.set('n', '<space>rn', vim.lsp.buf.rename, bufopts)
-  vim.keymap.set('n', '<space>lc', vim.lsp.buf.code_action, {
-    desc = 'Code actions', unpack(bufopts)
-  })
-  vim.keymap.set('n', 'gr', vim.lsp.buf.references, bufopts)
-  vim.keymap.set('n', '<space>lf', vim.lsp.buf.format, {
-    desc = 'Format file',
-    unpack(bufopts)
-  })
-end
-
-require('lspconfig').pyright.setup {
-  capabilities = capabilities,
-  on_attach = on_attach,
-}
-
-require('lspconfig').lua_ls.setup {
-  capabilities = capabilities,
-  on_attach = on_attach,
-  settings = {
-    Lua = {
-      telemetry = { enable = false },
+  -- mason-lspconfig
+  {
+    'williamboman/mason-lspconfig.nvim',
+    opts = {
+      ensure_installed = {
+        -- Names taken from lspconfig github, NOT Mason
+        'lua_ls',     -- lua-language-server
+        'pyright',
+        'cssls',      -- css-lsp
+        'tsserver',   -- typescript-language-server
+        'emmet_ls',   -- emmet-ls
+        'html',       -- html-lsp
+        'tailwindcss' -- tailwindcss-language-server
+      }
     }
+  },
+
+  -- mason
+  {
+    'williamboman/mason.nvim',
+    cmd = "Mason",
+    opts = {
+      ensure_installed = {
+        'black',
+        'stylua',
+        'prettier'
+      }
+    },
+    config = function(plugin, opts)
+      require('mason').setup(opts)
+      local mr = require('mason-registry')
+      for _, tool in ipairs(opts.ensure_installed) do
+        local p = mr.get_package(tool)
+        if not p:is_installed() then
+          p:install()
+        end
+      end
+    end
   }
 }
-
-require('lspconfig').tsserver.setup {
-  capabilities = capabilities,
-  on_attach = function(client, bufnr)
-    on_attach(client, bufnr)
-    client.server_capabilities.document_formatting = false
-    client.server_capabilities.document_range_formatting = false
-  end,
-  root_dir = function() return vim.loop.cwd() end,
-}
-
-require('lspconfig').cssls.setup({
-  capabilities = capabilities,
-  on_attach = on_attach,
-})
-
-require('lspconfig').emmet_ls.setup({
-  capabilities = capabilities,
-  on_attach = on_attach,
-})
