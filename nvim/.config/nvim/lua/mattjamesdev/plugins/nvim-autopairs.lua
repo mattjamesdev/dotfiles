@@ -1,6 +1,6 @@
 return {
   'windwp/nvim-autopairs',
-  event = 'VeryLazy',
+  event = 'InsertEnter',
   config = function()
   -- If you want insert `(` after select function or method item
     require('nvim-autopairs').setup({
