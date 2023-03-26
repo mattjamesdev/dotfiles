@@ -1,7 +1,7 @@
 return {
   {
     'hrsh7th/nvim-cmp', -- The main completion plugin
-    event = 'InsertEnter',
+    event = { 'InsertEnter', 'CmdlineEnter' },
     dependencies = {
       {'L3MON4D3/LuaSnip', opt = false},
       {'saadparwaiz1/cmp_luasnip', opt = false},
