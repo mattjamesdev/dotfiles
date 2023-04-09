@@ -53,35 +53,7 @@ nnoremap <leader>nh :set nohlsearch<CR>
 vnoremap J :m '>+1<CR>gv=gv
 vnoremap K :m '<-2<CR>gv=gv
 
-
-" === Plugins =================================================================
-" Automatically install vim-plug if not installed
-if empty(glob('~/.vim/autoload/plug.vim'))
-    silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
-    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-    "autocmd VimEnter * PlugInstall
-    "autocmd VimEnter * PlugInstall | source $MYVIMRC
-endif
-
-" Load plugins
-call plug#begin('~/.vim/plugged')
-Plug 'scrooloose/nerdtree'
-Plug 'itchyny/lightline.vim'
-Plug 'ap/vim-css-color'
-call plug#end()
-
-" === Lightline ===
-" Get Lightline to work
 set laststatus=2
-" If Lightline is acive, don't show the active mode (since it is shown in 
-" Lightline)
-set noshowmode
-
-" === NERDTree ===
-" Alias for NERDTree command
-:command NT NERDTree
-" Show hidden files
-let NERDTreeShowHidden=1
 
 
 " === Others ==================================================================
