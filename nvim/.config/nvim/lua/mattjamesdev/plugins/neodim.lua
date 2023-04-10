@@ -1,5 +1,6 @@
 return {
   'zbirenbaum/neodim', -- Dim text for unused variables, functions, etc.
+  cond = false,
   event = { 'LspAttach' },
   opts = {
     alpha = 0.75,
