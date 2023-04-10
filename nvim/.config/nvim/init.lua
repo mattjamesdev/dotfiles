@@ -22,4 +22,4 @@ require('mattjamesdev.autocommands')
 
 -- Colourscheme
 vim.opt.background = 'dark'
-vim.cmd.colorscheme('tundra')
+vim.cmd.colorscheme('tokyonight-night')

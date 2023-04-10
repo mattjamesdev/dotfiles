@@ -1,5 +1,6 @@
 return {
   'Mofiqul/vscode.nvim',
+  'folke/tokyonight.nvim',
   {
     'ellisonleao/gruvbox.nvim',
     config = true
