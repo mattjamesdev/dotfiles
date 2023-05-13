@@ -16,7 +16,7 @@ return {
       'onsails/lspkind-nvim', -- VSCode-like pictograms for completion
     },
     config = function()
-      -- vim.o.completeopt = 'menu,menuone,noselect'
+      vim.o.completeopt = 'menu,menuone,noselect'
       local cmp = require('cmp')
       local lspkind = require('lspkind')
       local luasnip = require('luasnip')
@@ -57,10 +57,10 @@ return {
           end,
         }),
         sources = cmp.config.sources({
-          { name = 'nvim_lsp' },
-          { name = 'luasnip' }, -- For luasnip users.
-          { name = 'nvim_lsp_signature_help' }, -- Function signatures
           { name = 'nvim_lua' },
+          { name = 'nvim_lsp_signature_help' }, -- Function signatures
+          { name = 'luasnip' }, -- For luasnip users.
+          { name = 'nvim_lsp' },
         }, {
           { name = 'buffer' },
         }),
