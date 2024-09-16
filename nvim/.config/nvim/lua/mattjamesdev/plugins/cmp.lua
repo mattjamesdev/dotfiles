@@ -59,7 +59,17 @@ return {
         sources = cmp.config.sources({
           { name = 'nvim_lua' },
           { name = 'nvim_lsp_signature_help' }, -- Function signatures
-          { name = 'luasnip' }, -- For luasnip users.
+          {
+            name = 'luasnip',
+            group_index = 1,
+            option = { use_show_condition = true },
+            -- Disable luasnip snippets when inside a string
+            entry_filter = function()
+              local context = require("cmp.config.context")
+              return not context.in_treesitter_capture("string")
+                and not context.in_syntax_group("String")
+            end
+          }, -- For luasnip users.
           { name = 'nvim_lsp' },
         }, {
           { name = 'buffer' },
