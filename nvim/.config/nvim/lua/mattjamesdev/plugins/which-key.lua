@@ -27,6 +27,24 @@ return {
       { w = { name = "workspace..." }, },
       { prefix = "<leader>" }
     )
+
+    -- Debugging
+    wk.register(
+      { d = { name = "debug..." }, },
+      { prefix = "<leader>" }
+    )
+    wk.register(
+      { b = { name = "breakpoints..." }, },
+      { prefix = "<leader>d" }
+    )
+    wk.register(
+      { p = { name = "Python..." }, },
+      { prefix = "<leader>d" }
+    )
+    wk.register(
+      { u = { name = "UI..." }, },
+      { prefix = "<leader>d" }
+    )
     wk.setup()
   end
 }

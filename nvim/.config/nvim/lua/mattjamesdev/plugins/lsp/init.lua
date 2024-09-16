@@ -55,7 +55,8 @@ return {
       ensure_installed = {
         'black',
         'stylua',
-        'prettier'
+        'prettier',
+        'debugpy',
       }
     },
     config = function(plugin, opts)
