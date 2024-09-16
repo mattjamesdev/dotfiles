@@ -17,6 +17,7 @@ return {
         "css",
         "typescript",
         "tsx",
+        "qmljs",
       },
 
       -- Syntax highlighting
