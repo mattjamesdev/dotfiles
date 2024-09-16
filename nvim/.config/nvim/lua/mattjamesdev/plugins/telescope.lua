@@ -19,6 +19,7 @@ return {
         ".venv",
         "venv",
         ".git",
+        ".idea",
       },
       layout_config = {
         prompt_position = "top",
