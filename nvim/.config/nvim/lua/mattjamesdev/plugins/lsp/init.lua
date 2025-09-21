@@ -10,9 +10,9 @@ return {
     config = require('mattjamesdev.plugins.lsp.server_config').server_setup
   },
 
-  -- null-ls
+  -- none-ls
   {
-    'jose-elias-alvarez/null-ls.nvim',
+    'nvimtools/none-ls.nvim',
     event = { 'BufReadPre', 'BufNewFile' },
     dependencies = {
       'mason.nvim',
@@ -39,7 +39,7 @@ return {
         'lua_ls',     -- lua-language-server
         'pyright',
         'cssls',      -- css-lsp
-        'tsserver',   -- typescript-language-server
+        'ts_ls',   -- typescript-language-server
         'emmet_ls',   -- emmet-ls
         'html',       -- html-lsp
         'tailwindcss' -- tailwindcss-language-server

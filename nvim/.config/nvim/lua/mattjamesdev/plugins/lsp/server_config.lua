@@ -70,7 +70,7 @@ M.server_setup = function()
     },
   }
 
-  require('lspconfig').tsserver.setup {
+  require('lspconfig').ts_ls.setup {
     capabilities = capabilities,
     on_attach = function(client, bufnr)
       on_attach(client, bufnr)
