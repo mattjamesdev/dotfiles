@@ -1,6 +1,7 @@
 # -----------------------------------------------------------------------------
 # General
-alias ls="exa -agh --group-directories-first"
+alias ls="eza -agh --group-directories-first"
+alias ll="eza -aghl --group-directories-first"
 alias path="echo -e ${PATH//\:/\\\n}"
 alias reload="clear; exec ${SHELL} -l"
 alias ta="tmux attach"
